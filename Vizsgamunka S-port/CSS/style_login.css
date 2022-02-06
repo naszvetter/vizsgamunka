@@ -1,0 +1,32 @@
+body
+{
+    background-color: honeydew;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0;
+}
+*
+{
+    box-sizing: border-box;
+}
+#wrapper
+{
+    max-width: 900px;
+    margin: 0 auto;
+}
+#kep
+{
+    -webkit-box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
+    box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74);
+}
+form
+{
+    width: 400px;
+    padding: 30px;
+    float: right; 
+}
+#email
+{
+    padding: 5px 6px 5px 6px
+}
