@@ -1,0 +1,24 @@
+body
+{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background: url('/IMG/menu_hatter.jpg');
+}
+/*#hatterkep
+{
+    background: no-repeat;
+    background-size: cover;
+}
+/**
+{
+    box-sizing: border-box;
+}*/
+/*#wrapper
+{
+    max-width: 800px;
+    margin: 13px auto
+}*/
+nav ul
+{
+    background-color: rgba(190, 0, 0, .6);
+}
