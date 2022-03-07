@@ -30,7 +30,7 @@ include_once 'include/connect.php';
               {
                   session_start();
                   $_SESSION['email'] = $email;
-                  header('location: home.php');
+                  header('location: esemenyek.php');
               }
             else
               {
@@ -65,7 +65,8 @@ include_once 'include/connect.php';
         <legend>Bejelentkezés</legend><br>
         email<input type="email" name="email" ><br><br>
         jelszó<input type="password" name="jelszo" ><br><br>
-        <input value="Bejelentkezés" type="submit" name="submit"/> <a href="index_registration.php">Regisztráció</a> <button>Regisztráció</button>
+        <input value="Bejelentkezés" type="submit" name="submit"/>
+        <a href="lacalhost/vizsgamunka/index_registration.php"><button>Regisztráció</button></a>
     
     </form>
     <?php

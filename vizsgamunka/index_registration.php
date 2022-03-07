@@ -72,9 +72,7 @@ include_once 'include/connect.php';
         email<input type="email" name="email" ><br><br>
         jelszó<input type="password" name="jelszo" ><br><br>
         jelszo_újra<input type="password" name="jelszo_ujra"><br><br>
-        <input value="Regisztráció" type="submit" name="submit"/> 
-        <!---ezt lehet php-ban kéne megoldani, hogy ha valaki regisztrált, 
-        és megnyomja a REGISZTÁRCIÓ gombot, akkor azzal a lendülettel tovább irányítsa a felhasználót az események oldalra! --->
+        <input value="Regisztráció" type="submit" name="submit"/>
     
     </form>
     <?php

@@ -1,19 +1,15 @@
 body
 {
-    background: url('../IMG/registration.jpg') no-repeat;
+    
     background-color: honeydew;
     margin: 0;
-    font-family: 'Catamaran', sans-serif;
-    background-size: 80% auto;
-    background-position: 50% top;
+    font-family: 'Times New Roman', Times, serif;
 }
-
 #wrapper
 {
     
     max-width: 900px;
-    margin: 20px;
-
+    margin: 0 auto;
 }
 nav::after
 {
@@ -32,7 +28,7 @@ nav ul li
 }
 nav ul li a
 {
-    color: black;
+    color: azure;
     text-decoration: none;
     display: block;
     padding: 20px;
@@ -42,8 +38,4 @@ nav a:hover
 {
     padding: 15px;
     background: rgba (255, 255, 255,.1);
-}
-h3
-{
-    color: black
 }

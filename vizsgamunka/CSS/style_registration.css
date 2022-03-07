@@ -2,17 +2,16 @@ body
 {
     
     background-color: honeydew;
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     line-height: 23px;
     margin: 0;
-
 }
 #header-image
 {
-    background: url('/IMG/sport.jpg') no-repeat;
+    background: url('/IMG/sport.jpg');
     -webkit-box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
-    box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74);
+    box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
     height: 230px;
 }
 h2
@@ -32,7 +31,7 @@ form
 {
     width: 400px;
     padding: 30px;
-    float: right;
+    float: right; 
 }
 #email
 {
