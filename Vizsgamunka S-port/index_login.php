@@ -65,7 +65,7 @@ include_once 'include/connect.php';
         <legend>Bejelentkezés</legend><br>
         email<input type="email" name="email" ><br><br>
         jelszó<input type="password" name="jelszo" ><br><br>
-        <input value="Bejelentkezés" type="submit" name="submit"/>
+        <input value="Bejelentkezés" type="submit" name="submit"/> <a href="index_registration.php">Regisztráció</a> <button>Regisztráció</button>
     
     </form>
     <?php

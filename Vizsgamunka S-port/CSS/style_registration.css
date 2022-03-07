@@ -2,14 +2,14 @@ body
 {
     
     background-color: honeydew;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Catamaran', sans-serif;
     font-size: 20px;
     line-height: 23px;
     margin: 0;
 }
 #header-image
 {
-    background: url('/IMG/sport.jpg');
+    background: url('/IMG/registration.jpg');
     -webkit-box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
     box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
     height: 230px;
