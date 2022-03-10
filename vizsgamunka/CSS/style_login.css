@@ -1,40 +1,67 @@
-body
-{
-    
-    background-color: honeydew;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    line-height: 23px;
-    margin: 0;
+body{
+    background: url("../IMG/login.png") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Catamaran', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Cabin', sans-serif;
+    color: rgb(226, 220, 215);
+    max-width: 100%;
+    height: auto;
+}
+
+.container-login{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form{
+    height: 420px;
+    width: 360px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    color: #fff;
+    padding-top: 50px;
+}
+
+.login h3{
+    letter-spacing: 1px;
 
 }
-#header-image
-{
-    background: url('/IMG/sport.jpg') no-repeat;
-    -webkit-box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74); 
-    box-shadow: 4px 6px 20px 0px rgba(39,39,39,0.74);
-    height: 230px;
+
+input{
+    width: 300px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 30px;
+    box-shadow: 0 0 4px #fff;    
 }
-h2
-{
-    text-size-adjust: 25px;
+
+.btn{
+    padding: 5px 20px;
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 0 4px #fff;
+    cursor: pointer;
+    color: rgb(226, 220, 215);
 }
-*
-{
-    box-sizing: border-box;
+
+input[name]:focus {
+    color: #fff;
 }
-#wrapper
-{
-    max-width: 900px;
-    margin: 0 auto;
-}
-form
-{
-    width: 400px;
-    padding: 30px;
-    float: right;
-}
-#email
-{
-    padding: 5px 6px 5px 6px
+
+input:focus,
+.btn:hover {
+    box-shadow: 0 0 10px rgb(175, 235, 9);
 }

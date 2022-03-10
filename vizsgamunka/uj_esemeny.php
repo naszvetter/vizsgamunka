@@ -9,13 +9,12 @@ include_once 'include/connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
-    <link rel="stylesheet" href="CSS/esemenyek.css">
+    <link rel="stylesheet" href="CSS/uj_esemeny.css">
     
-    
-    <title>Események</title>
-
+</head>
+    <title>Új esemény</title>
 <body>
-
+    
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">S-port</a>
@@ -25,7 +24,7 @@ include_once 'include/connect.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a>
+          <a class="nav-link active" aria-current="page" href="../vizsgamunka/esemenyek.php">Események</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Rólunk</a>
@@ -33,42 +32,23 @@ include_once 'include/connect.php';
     </div>
   </div>
 </nav>
-    <div>
-        <div>
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="">Események keresése</a></li>
-                        <li><a href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    </div>
+
+   
+
+        
     
-<?php        
- 
+    <div><h2>Hozd létre saját sporteseményed</h2></div>
 
-$sql = "SELECT * FROM esemenyek";
+  
 
-$result = $connect->query($sql);
+    <form action="uj_esemeny.php" method="POST"></form>
+    
+    
 
-// eredmény kiíratása
-if ($result->num_rows > 0) { // ha a lekérdezésnek van eredménye, akkor belépünk az if-be
-  while($row = $result->fetch_assoc()) { // amíg van rekord, addig kiírom őket
-    echo "id: " . $row["esemeny_id"]. ", esemény: " . $row["esemeny_nev"].", esemény ideje:". $row["esemeny_ido"].", esemény leírása".$row["esemeny_leiras"]. ", esemény helye:".$row["telepulesek_telepules_id"]. "<br>";
-  }
-} else {
-  echo "A lekérdezésnek nincs eredménye."; // nincs eredmény
-}
-?>
-
-<?php
+    <?php
 //legördülő lista- sportok
 $result=mysqli_query($connect,"select * from sportok");
 
-
-echo"<h2> Kereshetsz az események között!</h2>";
 echo"<hr/>";
 echo"<select>";
 echo"<option>---válassz sportágat!--</option>";
@@ -77,8 +57,7 @@ while($row=mysqli_fetch_array($result))
     echo"<option>$row[sport_nev]</option>";
 }
 echo"</select>";
-
-echo"</center>";
+//mysqli_close($connect);
 
 //legördülő lista- települések
 $result2=mysqli_query($connect,"select * from telepulesek");
@@ -93,8 +72,24 @@ while($row=mysqli_fetch_array($result2))
 echo"</select>";
 mysqli_close($connect);
 ?>
+<?php
+        /*  <select name="sportagak" class="form-control">
+            <?php
+            $lekerdezes = mysqli_query($mysqli, "SELECT DISTINCT sport_nev FROM sportok");
+            while ($sortomb = mysqli_fetch_assoc($lekerdezes)) {
+              $sportnev = $sortomb['sport_nev'];
+              echo "
+                    <option value='$sportnev'>$sportnev</option>
+                  ";
+            }
+            ?>
+             </select><br><br>
+             <button type="submit" name="f_submit" id="kalkgomb">Keresés</button>
+        </form>*/
+        ?>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+     
 </body>
 </html>

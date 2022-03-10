@@ -1,49 +1,16 @@
-body
-{
-    background: url('../IMG/registration.jpg') no-repeat;
-    background-color: rgb(140, 187, 181);
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-    background-position: 50%;
-    background-size: 90%;
-    height: 10%;
+body{
+    background: url("../IMG/uj_esemeny.png") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Catamaran', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Cabin', sans-serif;
+    color: rgb(230, 191, 165);
+    max-width: 100%;
+    height: auto;
 }
 
-#wrapper
-{
+
+
     
-    max-width: 900px;
-    margin: 15%;
-}
-nav::after
-{
-    content: '';
-    clear: both;
-    display: table;
-}
-nav ul
-{
-    background: rgba(48, 44, 44, 0.6);
-    list-style-type: none;
-}
-nav ul li
-{
-    float: left;
-}
-nav ul li a
-{
-    color: black;
-    text-decoration: none;
-    display: block;
-    padding: 20px;
-    margin: 0px;
-}
-nav a:hover
-{
-    padding: 15px;
-    background: rgba (255, 255, 255,.1);
-}
-h3
-{
-    color: black
-}
