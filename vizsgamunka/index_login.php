@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once 'include/connect.php';
-//$connect = new mysqli('localhost' , 'root' , '' , 'sport_esemenyek');
+
   if(isset($_POST['submit']))
     {
         $errors = array();
@@ -102,7 +102,7 @@ include_once 'include/connect.php';
 
 <!-- NAVbar vége -->
 
-    <form action="index_login_v2.php" method="POST">
+    <form action="index_login.php" method="POST">
        
         <!--legend>Bejelentkezés</!--legend><br>
         email<input type="email" name="email" ><br><br>
@@ -117,17 +117,14 @@ include_once 'include/connect.php';
         </div>
         <input type="text" name="email" placeholder="email"><br>
         <input type="password" name="jelszo" placeholder="jelszó"><br>
-        <div class="btn">Bejelentkezés</div>
+        <!--ez még nem szép, de nekem a bejelentkezéshez input mező kellene, hogy áttudja adni az adatokat -->
+        <input value="Bejelentkezés" type="submit" name="submit"><br><br>
+     
         <a href="./index_registration.php">
             <div class="btn">Regisztráció</div></a>
     </div>
 
     </form>
-
-
-        
-    
-    
 
     <footer></footer>
 
