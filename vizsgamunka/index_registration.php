@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once 'include/connect.php';
-//$connect = new mysqli('localhost' , 'root' , '' , 'sport_esemenyek');
+
   if(isset($_POST['submit']))
     {
         $errors = array();
@@ -41,9 +41,9 @@ include_once 'include/connect.php';
 
             $sql="INSERT INTO felhasznalok(felhasznalo_nev, jelszo, email) VALUES('$felhasznalo_nev','$jelszo','$email')";
             $connect-> query($sql);
-            /*session_start();
-            $_SESSION['username']=$username;
-            header('location:home.php');*/
+            session_start();
+            $_SESSION['email']=$email;
+            header('location:index_login.php');
         }
     }
     $connect->close();
@@ -107,7 +107,6 @@ include_once 'include/connect.php';
 <!--header>
   <h2>Üdvözöllek a S-port oldalon!</h2>
 </header-->
-    <form action="index_registration.php" method="POST">
        
         <!--legend>Itt tudsz regisztrálni</!--legend><br>
         felhasznaló név
@@ -119,17 +118,19 @@ include_once 'include/connect.php';
         jelszo_újra
         <input type="password" name="jelszo_ujra"><br><br>
         <input value="Regisztráció" type="submit" name="submit"/-->
+    <form action="index_registration.php" method="POST">
 
-    <div class="container-login">
-      <div class="login-form">
-        <div class="login">
-          <h3>Regisztráció</h3>
-        </div>
-        <input type="text" name="ferlhasznalo_nev" placeholder="Felhasználónév"><br>
+        <div class="container-login">
+            <div class="login-form">
+                 <div class="login">
+                <h3>Regisztráció</h3>
+                </div>
+        <input type="text" name="felhasznalo_nev" placeholder="Felhasználónév"><br>
         <input type="email" name="email" placeholder="email"><br>
         <input type="password" name="jelszo" placeholder="jelszó">
         <input type="password" name="jelszo_ujra" placeholder="jelszó mégegyszer">
-        <div class="btn">Regisztráció</div>
+        <input value="Regisztráció" type="submit" name="submit"/>
+       <!-- <div class="btn">Regisztráció</div> -->
       </div>
     </div>
     </form>
