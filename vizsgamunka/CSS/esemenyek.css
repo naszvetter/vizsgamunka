@@ -9,6 +9,7 @@ body{
     color: rgb(230, 191, 165);
     max-width: 100%;
     height: auto;
+    padding-top: 60px;
 }
 
 /* NAVBAR start */
@@ -134,4 +135,8 @@ header{
     }
 }
 
+.carousel-inner{
+    left: 50%
+    
+}
 /* NAVBAR finish */

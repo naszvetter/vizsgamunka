@@ -9,6 +9,7 @@ body{
     color: rgb(230, 191, 165);
     max-width: 100%;
     height: auto;
+    padding-top: 60px;
 }
 
 /* NAVBAR start */
@@ -20,13 +21,13 @@ header{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: #fff;
+    background: rgb(255, 255, 255);
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
 }
 .logo{
     height: 60xp;
     line-height: 60xp;
-    color: #12334e;
+    color: #38013f;
     font-weight: 700;
     font-size: 2em;
     text-decoration: none;
@@ -40,7 +41,7 @@ header{
     right: 0;
     width: 60px;
     height: 60px;
-    background: #ee4300;
+    background: #e44608;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -136,18 +137,18 @@ header{
 
 /* NAVBAR finish */
 
-/* login start */
+/* registration start */ 
 
 .container-login{
     position: absolute;
     top: 50%;
-    left: 22%;
+    left: 75%;
     transform: translate(-50%, -50%);
 }
 
 .login-form{
-    height: 500px;
-    width: 390px;
+    height: 420px;
+    width: 330px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -155,7 +156,7 @@ header{
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     color: #fff;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .login h3{
@@ -176,6 +177,7 @@ input{
 
 
 .btn{
+    width: 150px;
     padding: 5px 20px;
     margin-top: 30px;
     background: rgba(0, 0, 0, 0.2);
@@ -194,4 +196,78 @@ input:focus,
     box-shadow: 0 0 10px #b92200;
 }
 
-/* login end */
+@media screen and (max-width: 991px)
+{
+    .container-login{
+        height: 450px;
+        width: 360px;
+        top: 40%;
+        left: 50%;
+        padding: 30px;
+        margin: auto;
+        
+
+    }
+    .input{
+        width: 250px;
+        margin: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 10px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+
+
+
+}
+@media screen and (max-width: 480px)
+{
+    .container-login{
+        background: rgb(26, 24, 24);
+        height: 90%;
+        width: 100%;
+        top: 55%;
+        left: 50%;
+        padding: 30px;
+        margin: auto;
+        
+
+    }
+    .input{
+        width: 250px;
+        margin: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+}
+
+@media screen and (max-width: 330px)
+{
+    .container-login{
+        background: rgba(0, 0, 0, 0.4);
+        height: 90%;
+        width: 100%;
+        top: 55%;
+        left: 50%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 30px;
+    }
+    .input{
+        width: 150px;
+        margin: 10px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+}
+/* registration finish */
+

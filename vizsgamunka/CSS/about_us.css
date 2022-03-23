@@ -1,4 +1,16 @@
-
+body{
+    background: url("../IMG/") no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Catamaran', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Cabin', sans-serif;
+    color: rgb(230, 191, 165);
+    max-width: 100%;
+    height: auto;
+    padding-top: 60px;
+}
 
 
 
@@ -126,3 +138,14 @@ header{
 }
 
 /* NAVBAR finish */
+
+/* login start */
+
+.form-container{
+    position: absolute;
+    top: 25vh;
+    background: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}

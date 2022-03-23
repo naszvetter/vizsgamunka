@@ -102,29 +102,24 @@ include_once 'include/connect.php';
 
 <!-- NAVbar vége -->
 
-    <form action="index_login.php" method="POST">
-       
-        <!--legend>Bejelentkezés</!--legend><br>
-        email<input type="email" name="email" ><br><br>
-        jelszó<input type="password" name="jelszo" ><br><br>
-        <input value="Bejelentkezés" type="submit" name="submit"/>
-        <a-- href="/vizsgamunka/index_registration.php"><button>Regisztráció</button></a-->
 
-    <div class="container-login">
-      <div class="login-form">
-        <div class="login">
-          <h3>Bejelentkezés</h3>
+     <form action="index_login.php" method="POST">
+        <div class="container-login">
+          <div class="login-form">
+            <div class="login">
+              <h3>Bejelentkezés</h3>
+            </div>
+            <input type="text" name="email" placeholder="email"><br>
+            <input type="password" name="jelszo" placeholder="jelszó"><br>
+            <!-- ez még nem szép, de nekem a bejelentkezéshez input mező kellene, hogy áttudja adni az adatokat -->
+            <input class="btn" value="Bejelentkezés" type="submit" name="submit">
+            <a href="./index_registration.php">
+                <div class="btn">Regisztráció</div></a>
+          </div>      
         </div>
-        <input type="text" name="email" placeholder="email"><br>
-        <input type="password" name="jelszo" placeholder="jelszó"><br>
-        <!--ez még nem szép, de nekem a bejelentkezéshez input mező kellene, hogy áttudja adni az adatokat -->
-        <input value="Bejelentkezés" type="submit" name="submit"><br><br>
-     
-        <a href="./index_registration.php">
-            <div class="btn">Regisztráció</div></a>
-    </div>
+      </form>
 
-    </form>
+
 
     <footer></footer>
 

@@ -63,7 +63,7 @@ include_once 'include/connect.php';
 </head>
 <body>
 
-<!--Itt kezdődik a NAVbar-->
+<! --Itt kezdődik a NAVbar -->
 
   <header>
     <a href="#" class="logo">S-port</a>
@@ -81,7 +81,7 @@ include_once 'include/connect.php';
 
 
 
-<!-- script kód a NAVbar-hoz-->
+<! -- script kód a NAVbar-hoz -->
   <script>
     const header = document.getElementById('header');
     const toggle = document.getElementById('toggle');
@@ -100,41 +100,28 @@ include_once 'include/connect.php';
     }
   </script>
 
-<!-- NAVbar vége -->
+<! -- NAVbar vége -->
 
   
+<! -- regisztáció start -->
 
-<!--header>
-  <h2>Üdvözöllek a S-port oldalon!</h2>
-</header-->
-       
-        <!--legend>Itt tudsz regisztrálni</!--legend><br>
-        felhasznaló név
-        <input type="text" name="felhasznalo_nev"><br><br>
-        email
-        <input type="email" name="email" ><br><br>
-        jelszó
-        <input type="password" name="jelszo" ><br><br>
-        jelszo_újra
-        <input type="password" name="jelszo_ujra"><br><br>
-        <input value="Regisztráció" type="submit" name="submit"/-->
     <form action="index_registration.php" method="POST">
-
-        <div class="container-login">
-            <div class="login-form">
-                 <div class="login">
+      <div class="container-login">
+          <div class="login-form">
+              <div class="login">
                 <h3>Regisztráció</h3>
-                </div>
-        <input type="text" name="felhasznalo_nev" placeholder="Felhasználónév"><br>
-        <input type="email" name="email" placeholder="email"><br>
-        <input type="password" name="jelszo" placeholder="jelszó">
-        <input type="password" name="jelszo_ujra" placeholder="jelszó mégegyszer">
-        <input value="Regisztráció" type="submit" name="submit"/>
-       <!-- <div class="btn">Regisztráció</div> -->
-      </div>
-    </div>
+              </div>
+              <input type="text" name="felhasznalo_nev" placeholder="Felhasználónév">
+              <input type="email" name="email" placeholder="email">
+              <input type="password" name="jelszo" placeholder="jelszó">
+              <input type="password" name="jelszo_ujra" placeholder="jelszó mégegyszer">
+              <input class="btn" value="Regisztráció" type="submit" name="submit"/>
+          </div>
+      </div>    
     </form>
-    
+
+<! -- regisztráció finish -->
+
     <?php
     if(!empty($errors))
     {
@@ -146,7 +133,7 @@ include_once 'include/connect.php';
 
     ?>
 
-<!--div><footer>Minden jog fenntartva</footer></!--div-->
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -52,12 +52,30 @@ include_once 'include/connect.php';
 
 <!-- NAVbar vége -->
 
-    <!--div>
-      <ul>
-          <li><a href="">Események keresése</a></li>
-          <li><a href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a></li>
-      </ul>
-    </div-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="IMG/esemenyek2.png" class="d-block w-300" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="IMG/login2.png" class="d-block w-300" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="IMG/uj_esemeny2.png" class="d-block w-300" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
     
 <?php        
  
