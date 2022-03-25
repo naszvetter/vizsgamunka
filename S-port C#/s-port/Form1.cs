@@ -20,11 +20,11 @@ namespace s_port
             string query = "SELECT * FROM sport." + tabla;
             AdatokLekerese(query);
         }
-        private void AdatokLekerese(string command)
+        private void AdatokLekerese(string parancs)
         {
             using (MySqlConnection conn = new MySqlConnection(_connectionString))
             {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(command, conn))
+                using (MySqlDataAdapter adapter = new MySqlDataAdapter(parancs, conn))
                 {
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
