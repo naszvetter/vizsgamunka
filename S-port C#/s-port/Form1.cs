@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace s_port
@@ -8,28 +9,35 @@ namespace s_port
     public partial class Form1 : Form
     {
         private readonly string _connectionString = "datasource=localhost;port=3306;username=root;password=";
-        private string _aktualisTabla = "";
+        private DataTable _aktualisTabla;
        
         public Form1()
         {
             InitializeComponent();
         }
         private void TablaLekeres(string tabla)
-        {
-            _aktualisTabla = tabla;           
+        {          
             string query = "SELECT * FROM sport." + tabla;
             AdatokLekerese(query);
         }
         private void AdatokLekerese(string parancs)
         {
-            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            try
             {
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(parancs, conn))
+                using (MySqlConnection conn = new MySqlConnection(_connectionString))
                 {
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);
-                    AdatokMegjelenitese(ds.Tables[0]);
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(parancs, conn))
+                    {
+                        DataSet ds = new DataSet();
+                        adapter.Fill(ds);
+                        _aktualisTabla=ds.Tables[0];
+                        AdatokMegjelenitese(ds.Tables[0]);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.Message,caption: "Hiba");
             }
         }
         private void AdatokMegjelenitese(DataTable table)
@@ -60,48 +68,39 @@ namespace s_port
 
         private void Kereses(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_aktualisTabla))
+            if (_aktualisTabla == null)
             {
                 MessageBox.Show("Nem történt lekérdezés!","Hiba") ;
             }
             else
             {
-                string command = "SELECT * FROM sport." + _aktualisTabla;
-                using (MySqlConnection conn = new MySqlConnection(_connectionString))
+                var tabla = _aktualisTabla.Copy();
+                for (int i = tabla.Rows.Count - 1; i >= 0 ; i--)
                 {
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command, conn))
+                    bool vanTalalat = false;                          
+                    for (int j = tabla.Columns.Count - 1; j >= 0 ; j--)
                     {
-                        DataSet ds = new DataSet();
-                        adapter.Fill(ds);
-
-                        for (int i = ds.Tables[0].Rows.Count - 1; i >= 0 ; i--)
+                        var cellaErtek = tabla.Rows[i][j];
+                        if (string.Equals(cellaErtek.ToString(), textBox1.Text, StringComparison.OrdinalIgnoreCase))
                         {
-                            bool vanTalalat = false;                          
-                            for (int j = ds.Tables[0].Columns.Count - 1; j >= 0 ; j--)
-                            {
-                                var cellaErtek = ds.Tables[0].Rows[i][j];
-                                if (string.Equals(cellaErtek.ToString(), textBox1.Text, StringComparison.OrdinalIgnoreCase))
-                                {
-                                    vanTalalat = true;
-                                }
-                            }
-
-                            if (!vanTalalat)
-                            {
-                                ds.Tables[0].Rows.RemoveAt(i);
-                            }
-                        }
-                        if (ds.Tables[0].Rows.Count == 0)
-                        {
-                            MessageBox.Show("Nincs találat", "Keresés");
-                        }
-                        else
-                        {
-                            AdatokMegjelenitese(ds.Tables[0]);
+                            vanTalalat = true;
                         }
                     }
+
+                    if (!vanTalalat)
+                    {
+                        tabla.Rows.RemoveAt(i);
+                    }
                 }
-            }
+                if (tabla.Rows.Count == 0)
+                {
+                    MessageBox.Show("Nincs találat", "Keresés");
+                }
+                else
+                {
+                    AdatokMegjelenitese(tabla);
+                }
+            }     
         }
 
         private void KeresesEnterre(object sender, KeyEventArgs e)
@@ -109,7 +108,14 @@ namespace s_port
             if (e.KeyCode == Keys.Enter)
             {
                 Kereses(null,null);
+                e.SuppressKeyPress = true;
             }
+        }
+
+        private void AblakMeretModosul(object sender, EventArgs e)
+        {
+            dataGridView1.Invalidate();
         }
     }
 }
+
