@@ -37,7 +37,8 @@ namespace s_port
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.InnerException.Message,caption: "Hiba");
+                var message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                MessageBox.Show(message,caption: "Hiba");
             }
         }
         private void AdatokMegjelenitese(DataTable table)
