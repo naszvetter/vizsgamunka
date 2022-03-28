@@ -134,3 +134,8 @@ C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port
 C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.csproj.CopyComplete
 C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.exe
 C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.pdb
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\bin\Debug\s-port.exe.manifest
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\bin\Debug\s-port.application
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.TrustInfo.xml
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.exe.manifest
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s-port.application

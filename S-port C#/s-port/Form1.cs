@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace s_port
@@ -14,6 +13,7 @@ namespace s_port
         public Form1()
         {
             InitializeComponent();
+            Icon = s_port.Properties.Resources.ikon;
         }
         private void TablaLekeres(string tabla)
         {          
