@@ -82,9 +82,11 @@ namespace s_port
                     for (int j = tabla.Columns.Count - 1; j >= 0 ; j--)
                     {
                         var cellaErtek = tabla.Rows[i][j];
-                        if (string.Equals(cellaErtek.ToString(), textBox1.Text, StringComparison.OrdinalIgnoreCase))
+                        //if (string.Equals(cellaErtek.ToString(), textBox1.Text, StringComparison.OrdinalIgnoreCase)) telitalalat
+                        //if (cellaErtek.ToString().ToLowerInvariant().Contains(textBox1.Text.ToLowerInvariant())) mindenhol
+                        if (cellaErtek.ToString().ToLowerInvariant().StartsWith(textBox1.Text.ToLowerInvariant()))
                         {
-                            vanTalalat = true;
+                           vanTalalat = true;
                         }
                     }
 
