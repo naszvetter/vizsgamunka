@@ -65,7 +65,7 @@ include_once 'include/connect.php';
 
     <?php
 //legördülő lista- sportok
-$result=mysqli_query($connect,"select * from sportok");
+/*$result=mysqli_query($connect,"select * from sportok");
 
 echo"<hr/>";
 echo"<select>";
@@ -87,8 +87,7 @@ while($row=mysqli_fetch_array($result2))
 {
     echo"<option>$row[telepules_nev]</option>";
 }
-echo"</select>";
-mysqli_close($connect);
+echo"</select>";*/
 ?>
 <?php
         /*  <select name="sportagak" class="form-control">
@@ -105,8 +104,65 @@ mysqli_close($connect);
              <button type="submit" name="f_submit" id="kalkgomb">Keresés</button>
         </form>*/
         ?>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card p-4">
+        <form>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Sportág</label>
+            <div class="col-sm-10">
+              <select class="form-control">
+              <option>---válassz sportágat!---</option>
+            <?php
+//legördülő lista- sportok
+$result=mysqli_query($connect,"select * from sportok");
+while($row=mysqli_fetch_array($result))
+{
+    echo"<option>$row[sport_nev]</option>";
+}
+?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Település</label>
+            <div class="col-sm-10">
+              <select>
+                <option>---Válassz települést!---</option>
+                <?php
+                $result2=mysqli_query($connect,"select * from telepulesek");
+                while($row=mysqli_fetch_array($result2))
+{
+    echo"<option>$row[telepules_nev]</option>";
+}
+?>
+
+              </select>
+            </div>
+            <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Időpont</label>
+            <div class="col-sm-10">
+              <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+              min="2018-01-01" max="2018-12-31">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<?php
+
+mysqli_close($connect);
+?>
 
      
 </body>

@@ -63,7 +63,7 @@ include_once 'include/connect.php';
 </head>
 <body>
 
-    <!--Itt kezdődik a NAVbar-->
+    <! --Itt kezdődik a NAVbar -->
 
   <header>
     <a href="#" class="logo">S-port</a>

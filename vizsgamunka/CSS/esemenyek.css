@@ -1,6 +1,7 @@
 body{
     background: url("../IMG/esemenyek.png") no-repeat;
     background-position: center;
+    
     background-attachment: fixed;
     background-size: cover;
     font-family: 'Catamaran', sans-serif;
@@ -10,6 +11,7 @@ body{
     max-width: 100%;
     height: auto;
     padding-top: 60px;
+    /*background-size: contain;*/
 }
 
 /* NAVBAR start */
@@ -23,6 +25,8 @@ header{
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    height: 60px;
+    z-index: 10;
 }
 .logo{
     height: 60xp;
@@ -84,7 +88,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 584px;
+    width: 563px;
 }
 #navbar ul{
     position: relative;
@@ -103,14 +107,15 @@ header{
     font-size: 1.2em;
     padding: 0 15px;
     letter-spacing: 2px;
+    text-align: center;
 }
 #navbar ul li a:hover{
     color: #fff;
     background: #ee4300;
 }
-/* responsive NAVBAR's section */
+/* responsive NAVBAR section */
 
-@media (max-width: 991px)
+@media (max-width: 900px)
 {
     #navbar{
         position: fixed;
@@ -121,10 +126,10 @@ header{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 60px);
+        height: calc(100% - 59px);
     }
     #navbar.active{
-        height: calc(100vh - 60px);
+        
         bottom: 0;
         width: 100%;
     }
@@ -134,9 +139,14 @@ header{
         align-items: center;
     }
 }
+.egesz{
+    height: 80%;
 
-.carousel-inner{
-    left: 50%
     
 }
-/* NAVBAR finish */
+.form-control{
+    border-radius: 30px;
+}
+
+
+

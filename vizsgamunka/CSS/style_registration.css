@@ -23,6 +23,7 @@ header{
     width: 100%;
     background: rgb(255, 255, 255);
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    height: 60px;
 }
 .logo{
     height: 60xp;
@@ -110,7 +111,7 @@ header{
 }
 /* responsive NAVBAR section */
 
-@media (max-width: 991px)
+@media (max-width: 900px)
 {
     #navbar{
         position: fixed;
@@ -121,10 +122,10 @@ header{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 60px);
+        height: calc(100% - 59px);
+        
     }
     #navbar.active{
-        height: calc(100vh - 60px);
         bottom: 0;
         width: 100%;
     }
@@ -141,7 +142,7 @@ header{
 
 .container-login{
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 75%;
     transform: translate(-50%, -50%);
 }
@@ -156,7 +157,7 @@ header{
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     color: #fff;
-    padding-top: 25px;
+    padding-top: 50px;
 }
 
 .login h3{
@@ -196,17 +197,50 @@ input:focus,
     box-shadow: 0 0 10px #b92200;
 }
 
-@media screen and (max-width: 991px)
+@media screen and (max-width: 900px)
 {
     .container-login{
-        height: 450px;
-        width: 360px;
-        top: 40%;
-        left: 50%;
+        left:50%;
+        z-index: -10;
+    }
+}
+
+@media screen and (max-height: 500px)
+{
+    .container-login{
+        position: inherit;
+        transform: none;
+    }
+    .login-form{
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 365px)
+{
+    .container-login{
+        position: inherit;
+        transform: none;
+    }
+    .login-form{
+        width: 100%;
+        margin-left:0;
+        margin-right:0;
+        border-width: 0;
+        box-shadow: none;
+        height: 100vh;
+    }
+}
+/*@media screen and (max-width: 991px)
+{
+    .container-login{
+        height: 560px;
+        width: 490px;
+        top: 53%;
+        left: 56%;
         padding: 30px;
         margin: auto;
+        z-index: -10;
         
-
     }
     .input{
         width: 250px;
@@ -214,60 +248,249 @@ input:focus,
         background: rgba(0, 0, 0, 0.3);
         outline: none;
         padding: 10px;
-        font-size: 12px;
+        font-size: 13px;
         border-radius: 30px;
         box-shadow: 0 0 4px #fff;
     }
-
-
-
 }
-@media screen and (max-width: 480px)
+@media screen and (max-width: 685px)
 {
     .container-login{
-        background: rgb(26, 24, 24);
-        height: 90%;
-        width: 100%;
-        top: 55%;
-        left: 50%;
+        height: 560px;
+        width: 490px;
+        top: 54%;
+        left: 57%;
         padding: 30px;
         margin: auto;
+        z-index: -10;
         
-
     }
     .input{
         width: 250px;
         margin: 15px;
         background: rgba(0, 0, 0, 0.3);
         outline: none;
-        padding: 5px;
-        font-size: 12px;
+        padding: 10px;
+        font-size: 13px;
         border-radius: 30px;
         box-shadow: 0 0 4px #fff;
     }
 }
-
-@media screen and (max-width: 330px)
+@media screen and (max-width: 590px)
 {
     .container-login{
-        background: rgba(0, 0, 0, 0.4);
-        height: 90%;
-        width: 100%;
+        height: 560px;
+        width: 480px;
         top: 55%;
-        left: 50%;
+        left: 58%;
+        padding: 30px;
+        margin: auto;
+        z-index: -10;
+        
+    }
+    .input{
+        width: 250px;
+        margin: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+}
+@media screen and (max-width: 550px)
+{
+    .container-login{
+        height: 560px;
+        width: 470px;
+        top: 55%;
+        left: 59%;
+        padding: 30px;
+        margin: auto;
+        z-index: -10;
+        
+    }
+    .input{
+        width: 250px;
+        margin: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+}
+@media screen and (max-width: 520px)
+{
+    .container-login{
+        height: 560px;
+        width: 460px;
+        top: 55%;
+        left: 60%;
+        padding: 30px;
+        margin: auto;
+        z-index: -10;
+        
+    }
+    .input{
+        width: 250px;
+        margin: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding: 10px;
+        font-size: 13px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+    }
+}
+@media screen and (max-width: 480px)
+{   
+    
+    .container-login{
+        height: 560px;
+        width: 430px;
+        top: 54%;
+        left: 55%;
         border-style: none;
         box-shadow: 0 0 0 0;
         padding: 30px;
+        z-index: -10;
     }
-    .input{
-        width: 150px;
-        margin: 10px;
+    input{
+        width: 250px;
+        margin: 15px;
         outline: none;
         padding: 5px;
         font-size: 12px;
         border-radius: 30px;
         box-shadow: 0 0 4px #fff;
+        
     }
 }
+@media screen and (max-width: 450px)
+{   
+    
+    .container-login{
+        height: 560px;
+        width: 430px;
+        top: 54%;
+        left: 54%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 30px;
+        z-index: -10;
+    }
+    input{
+        width: 250px;
+        margin: 15px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+        
+    }
+}
+@media screen and (max-width: 425px)
+{   
+    
+    .container-login{
+        height: 560px;
+        width: 390px;
+        top: 53%;
+        left: 54%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 30px;
+        z-index: -10;
+    }
+    input{
+        width: 250px;
+        margin: 15px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+        
+    }
+}
+@media screen and (max-width: 376px)
+{   
+    
+    .container-login{
+        height: 560px;
+        width: 390px;
+        top: 54%;
+        left: 51%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 30px;
+        z-index: -10;
+    }
+    input{
+        width: 250px;
+        margin: 15px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+        
+    }
+}
+@media screen and (max-width: 341px)
+{   
+    
+    .container-login{
+       
+        height: 560px;
+        width: 325px;
+        top: 54%;
+        left: 47%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 13px;
+        z-index: -10;
+    }
+    input{
+        width: 250px;
+        margin: 15px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+        
+    }
+}
+@media screen and (max-width: 320px)
+{   
+    
+    .container-login{
+        
+        height: 560px;
+        width: 305px;
+        top: 54%;
+        left: 50%;
+        border-style: none;
+        box-shadow: 0 0 0 0;
+        padding: 8px;
+        z-index: -10;
+    }
+    input{
+        width: 250px;
+        margin: 15px;
+        outline: none;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 30px;
+        box-shadow: 0 0 4px #fff;
+        
+    }
+}
+
 /* registration finish */
 

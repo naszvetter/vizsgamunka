@@ -52,30 +52,6 @@ include_once 'include/connect.php';
 
 <!-- NAVbar vége -->
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="IMG/esemenyek2.png" class="d-block w-300" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/login2.png" class="d-block w-300" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="IMG/uj_esemeny2.png" class="d-block w-300" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-
     
 <?php        
  
@@ -96,7 +72,7 @@ if ($result->num_rows > 0) { // ha a lekérdezésnek van eredménye, akkor belé
 
 <?php
 //legördülő lista- sportok
-$result=mysqli_query($connect,"select * from sportok");
+/*$result=mysqli_query($connect,"select * from sportok");
 
 
 echo"<h2> Kereshetsz az események között!</h2>";
@@ -122,10 +98,62 @@ while($row=mysqli_fetch_array($result2))
     echo"<option>$row[telepules_nev]</option>";
 }
 echo"</select>";
-mysqli_close($connect);
+//mysqli_close($connect);*/
 ?>
 
+
+<section class="egesz">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <div class="card p-5">
+          <form>
+            <div class="form-group row">
+              <label for="sportag" class="col-sm-3 col-form-label">Sportág</label>
+              <div class="col-sm-10">
+                <select class="form-control">
+                <option>---válassz sportágat!---</option>
+              <?php
+  //legördülő lista- sportok
+  $result=mysqli_query($connect,"select * from sportok");
+  while($row=mysqli_fetch_array($result))
+  {
+      echo"<option>$row[sport_nev]</option>";
+  }
+  ?>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="pt col-sm-3 col-form-label">Település</label>
+              <div class="col-sm-10">
+                <select>
+                  <option>---Válassz települést!---</option>
+                  <?php
+                  $result2=mysqli_query($connect,"select * from telepulesek");
+                  while($row=mysqli_fetch_array($result2))
+  {
+      echo"<option>$row[telepules_nev]</option>";
+  }
+  ?>
+
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<?php
+
+mysqli_close($connect);
+?>
 
 </body>
 </html>

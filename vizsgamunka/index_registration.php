@@ -70,8 +70,8 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="#">Események</a></li>
-        <li><a href="#">Új esemény léterhozása</a></li>
+        <li><a href="esemenyek.php">Események</a></li>
+        <li><a href="uj_esemeny.php">Új esemény léterhozása</a></li>
         <li><a href="#">Rólunk</a></li>
         <li><a href="#">Kijelentkezés</a></li>
       </ul>
