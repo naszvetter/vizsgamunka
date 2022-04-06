@@ -5,6 +5,8 @@ namespace s_port
 {
     internal class DataGridViewBackground : DataGridView
     {
+        public bool SelectedCell { get; internal set; }
+
         protected override void PaintBackground(Graphics graphics, Rectangle clipBounds, Rectangle gridBounds)
         {
             base.PaintBackground(graphics, clipBounds, gridBounds);
@@ -24,13 +26,13 @@ namespace s_port
         {
             this.EnableHeadersVisualStyles = false;
             this.ColumnHeadersDefaultCellStyle.BackColor = Color.Transparent;
-            this.RowHeadersDefaultCellStyle.BackColor = Color.Transparent;
+            this.RowHeadersDefaultCellStyle.BackColor = Color.Black;
 
 
             foreach (DataGridViewColumn col in this.Columns)
             {
                 col.DefaultCellStyle.BackColor = Color.Transparent;
-                col.DefaultCellStyle.SelectionBackColor = Color.Transparent;
+                col.DefaultCellStyle.SelectionBackColor = Color.Black;
             }
         }
     }

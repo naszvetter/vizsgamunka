@@ -17,7 +17,7 @@ namespace s_port
         }
         private void TablaLekeres(string tabla)
         {          
-            string query = "SELECT * FROM sport." + tabla;
+            string query = "SELECT * FROM sport_esemenyek." + tabla;
             AdatokLekerese(query);
         }
         private void AdatokLekerese(string parancs)
@@ -119,6 +119,11 @@ namespace s_port
         {
             dataGridView1.Invalidate();
         }
+
+        private void select(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.SelectedCell = true;
+
+        }
     }
 }
-

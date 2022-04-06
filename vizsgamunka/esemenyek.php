@@ -10,10 +10,25 @@ include_once 'include/connect.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
     <link rel="stylesheet" href="CSS/esemenyek.css">
-    
-    
-    <title>Események</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="CSS/jquery-ui.css">
+    <script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+    <script type="text/javascript" src="js/jquery-ui.js" ></script>
+    <script type="text/javascript">
 
+  $( function() {
+    $( "#from" ).datepicker();
+    } );
+
+    $( function() {
+    $( "#to" ).datepicker();
+    } );
+
+  </script>
+
+
+    <title>Események</title>
+</head>
 <body>
 
   <!--Itt kezdődik a NAVbar-->
@@ -52,108 +67,108 @@ include_once 'include/connect.php';
 
 <!-- NAVbar vége -->
 
-    
-<?php        
- 
+<div class="container">
+<h3 style="text-align: center;font-weight:bold"> Sport események közötti keresés</h3>
 
-$sql = "SELECT * FROM esemenyek";
-
-$result = $connect->query($sql);
-
-// eredmény kiíratása
-if ($result->num_rows > 0) { // ha a lekérdezésnek van eredménye, akkor belépünk az if-be
-  while($row = $result->fetch_assoc()) { // amíg van rekord, addig kiírom őket
-    echo "id: " . $row["esemeny_id"]. ", esemény: " . $row["esemeny_nev"].", esemény ideje:". $row["esemeny_ido"].", esemény leírása".$row["esemeny_leiras"]. ", esemény helye:".$row["telepulesek_telepules_id"]. "<br>";
-  }
-} else {
-  echo "A lekérdezésnek nincs eredménye."; // nincs eredmény
-}
-?>
-
-<?php
-//legördülő lista- sportok
-/*$result=mysqli_query($connect,"select * from sportok");
-
-
-echo"<h2> Kereshetsz az események között!</h2>";
-echo"<hr/>";
-echo"<select>";
-echo"<option>---válassz sportágat!--</option>";
-while($row=mysqli_fetch_array($result))
-{
-    echo"<option>$row[sport_nev]</option>";
-}
-echo"</select>";
-
-echo"</center>";
-
-//legördülő lista- települések
-$result2=mysqli_query($connect,"select * from telepulesek");
-
-echo"<hr/>";
-echo"<select>";
-echo"<option>---válassz települést!--</option>";
-while($row=mysqli_fetch_array($result2))
-{
-    echo"<option>$row[telepules_nev]</option>";
-}
-echo"</select>";
-//mysqli_close($connect);*/
-?>
-
-
-<section class="egesz">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-8 col-sm-12">
-        <div class="card p-5">
-          <form>
-            <div class="form-group row">
-              <label for="sportag" class="col-sm-3 col-form-label">Sportág</label>
-              <div class="col-sm-10">
-                <select class="form-control">
-                <option>---válassz sportágat!---</option>
-              <?php
-  //legördülő lista- sportok
-  $result=mysqli_query($connect,"select * from sportok");
-  while($row=mysqli_fetch_array($result))
-  {
-      echo"<option>$row[sport_nev]</option>";
-  }
-  ?>
-                </select>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputEmail3" class="pt col-sm-3 col-form-label">Település</label>
-              <div class="col-sm-10">
-                <select>
-                  <option>---Válassz települést!---</option>
-                  <?php
-                  $result2=mysqli_query($connect,"select * from telepulesek");
-                  while($row=mysqli_fetch_array($result2))
-  {
-      echo"<option>$row[telepules_nev]</option>";
-  }
-  ?>
-
-                </select>
-              </div>
-            </div>
-          </form>
+  <div class="row">
+  <label></label>
+    <form class="form-horizontal" action="esemenyek.php" method="POST">
+  
+      <div class="form-group row">
+      <label></label>
+      <div class="col-sm-4">  
+        <select name="esemeny_hely" class="form-control" > 
+        <option>Település választása</option>
+        <?php
+        $result2=mysqli_query($connect,"select * from telepulesek");
+        while($row=mysqli_fetch_array($result2))
+        {
+         $telepules=$row['telepules_nev'];
+        echo "<option> $telepules </option>";
+        } 
+        ?>
+        </select>
         </div>
-      </div>
+    </div>
+
+  <div class="form-group">
+  <label></label>
+    <div class="col-sm-4">
+      <input type="text" name="esemeny_ido" id="from" class="form-control" placeholder="Időpont">
     </div>
   </div>
-</section>
+
+  <div class="form-group">
+  <label></label>
+    <div class="col-sm-4">
+      <input type="submit"name="submit" class="btn btn-primary" value="Keresés">
+    </div>
+  </div>
+
+  </form>
+  </div>
+</div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<div class="container">
+<div class="row">
+  <table class="table table-striped table-hoover">
+    <thead>
+      <tr>
+        <td>Esemény név</td>
+        <td>Esemény helye</td>
+        <td>Esemény időpontja</td>
+        <td>Részletek</td>
+      </tr>
+    </thead>
+  
+  <tbody>
+    <?php
+    include_once 'include/connect.php';
+    if(isset($_POST['submit'])) 
+    {
+        $telepulesek=$_POST['esemeny_hely'];
+        $fromdate=$_POST['esemeny_ido'];
+        $fdate= strtotime($fromdate);
+        $fdate= date("Y/m/d", $fdate);
+    }
+    if ($telepulesek != "" || $fromdate != "")
+    {
+     $query= ("SELECT * FROM esemenyek WHERE esemeny_hely= '$telepulesek' OR esemeny_ido='$fdate' "); 
+     $data= mysqli_query($connect, $query) OR die('error');
+  
+      if(mysqli_num_rows($data)>0)
+      {
+          while($row=mysqli_fetch_assoc($data))
+          {
+              $esemenyneve= $row['esemeny_nev'];  
+              $telepulesek= $row['esemeny_hely'];
+              $fromdate= $row['esemeny_ido'];
+              $esemenyleiras= $row['esemeny_leiras'];
+          
+             ?>
+            <tr>
+              <td><?php echo $esemenyneve; ?></td>
+              <td><?php echo $telepulesek; ?></td>
+              <td><?php echo $fromdate; ?></td>
+              <td><?php echo $esemenyleiras; ?></td> 
+            </tr> 
+            <?php 
+          } 
+      }?>
+      else{
+        <tr>
+          <td>Nincs találat!</td>
+        </tr>
+        }<?php
 
-<?php
-
-mysqli_close($connect);
-?>
+    }
+    ?>
+  </tbody>
+  </table>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script
 
 </body>
 </html>

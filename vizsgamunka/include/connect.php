@@ -9,7 +9,7 @@ $connect = new mysqli($servername, $username, $password, $dbname);
 if ($connect->connect_error) {
     die("Sikertelen kapcsolódás: " . $connect -> connection_error);
 } else {
-    echo "";
+    echo "sikeres kapcsolódás az adatbázishoz";
 }
 
 ?>
