@@ -117,5 +117,9 @@ namespace s_port
         {
             dataGridView1.Invalidate();
         }
+        private void Bezaras(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

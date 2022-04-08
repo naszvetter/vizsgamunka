@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="s-port.exe" size="2779120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="s-port.exe" size="3089904">
       <assemblyIdentity name="s-port" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xkAzQCMVVz/PjanMMCzltkggZZEeZ9mb4qpTOCRT1rQ=</dsig:DigestValue>
+        <dsig:DigestValue>R900WFcu2ftpgxM/68nSGzVwM2oO26SDKxX3k3NH3V4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
