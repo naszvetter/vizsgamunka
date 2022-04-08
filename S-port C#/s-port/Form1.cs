@@ -17,7 +17,7 @@ namespace s_port
         }
         private void TablaLekeres(string tabla)
         {          
-            string query = "SELECT * FROM sport_esemenyek." + tabla;
+            string query = "SELECT * FROM sport." + tabla;
             AdatokLekerese(query);
         }
         private void AdatokLekerese(string parancs)
@@ -82,8 +82,6 @@ namespace s_port
                     for (int j = tabla.Columns.Count - 1; j >= 0 ; j--)
                     {
                         var cellaErtek = tabla.Rows[i][j];
-                        //if (string.Equals(cellaErtek.ToString(), textBox1.Text, StringComparison.OrdinalIgnoreCase)) telitalalat
-                        //if (cellaErtek.ToString().ToLowerInvariant().Contains(textBox1.Text.ToLowerInvariant())) mindenhol
                         if (cellaErtek.ToString().ToLowerInvariant().StartsWith(textBox1.Text.ToLowerInvariant()))
                         {
                            vanTalalat = true;
@@ -118,12 +116,6 @@ namespace s_port
         private void AblakMeretModosul(object sender, EventArgs e)
         {
             dataGridView1.Invalidate();
-        }
-
-        private void select(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            dataGridView1.SelectedCell = true;
-
         }
     }
 }
