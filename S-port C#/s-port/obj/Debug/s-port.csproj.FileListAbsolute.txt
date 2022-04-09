@@ -177,3 +177,4 @@ C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.application
 C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.csproj.CopyComplete
 C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.exe
 C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.pdb
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s_port.Belepes.resources
