@@ -110,8 +110,10 @@ include_once 'include/connect.php';
   </script>
 
 <!-- NAVbar vége -->
-<div><h2>Hozd létre saját sporteseményed</h2></div>
 
+<div><h2 style="text-align: center; font-weight: bold">Hozd létre saját sporteseményed</h2></div>
+
+<div class="container">
 <div class="row"> 
     <form class="form-horizontal" action="uj_esemeny.php" method="POST">
     
@@ -124,7 +126,7 @@ include_once 'include/connect.php';
               
     <div class="form-group">
       <label></label>
-      <div class="col-sm-4">
+      <div class="col-lg-4">
         <select name="esemeny_hely" class="form-control"> 
           <option>Esemény helye</option>
             <?php
@@ -138,7 +140,8 @@ include_once 'include/connect.php';
         </select>
       </div>
     </div>
-            
+
+
     <div class="form-group">
         <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
@@ -149,7 +152,7 @@ include_once 'include/connect.php';
     <div class="form-group">
       <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
-        <input type="text" name="esemeny_leiras" class="form-control" placeholder="Esemény részletei">
+        <input type="text" name="esemeny_leiras" class="form-control" maxlength="200" placeholder="Esemény részletei (max. 200 karakter)">
       </div>
     </div>
 
@@ -161,13 +164,15 @@ include_once 'include/connect.php';
     </div>
   </form>
     </form>
+  </div>
 </div>
+
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <?php
 
 mysqli_close($connect);
 ?>
 
-     
+
 </body>
 </html>
