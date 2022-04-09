@@ -130,7 +130,7 @@ include_once 'include/connect.php';
         $fromdate=$_POST['esemeny_ido'];
         $fdate= strtotime($fromdate);
         $fdate= date("Y/m/d", $fdate);
-    }
+    
     if ($telepulesek != "" || $fromdate != "")
     {
      $query= ("SELECT * FROM esemenyek WHERE esemeny_hely= '$telepulesek' OR esemeny_ido='$fdate' "); 
@@ -154,16 +154,19 @@ include_once 'include/connect.php';
             </div> 
             <?php 
           } 
-      }?>
-      else{
-        <tr>
-          <td>Nincs találat!</td>
-        </tr>
-        }<?php
+      }
+      ?>
+                 <!-- else{
+                    <tr>
+                      <td>Nincs találat!</td>
+                    </tr> -->
+   <?php
 
+    }?>
+    <?php
     }
     ?>
-  </div> 
+    </div> 
 </div>
 
 
