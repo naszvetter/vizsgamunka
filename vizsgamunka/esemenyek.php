@@ -133,7 +133,7 @@ include_once 'include/connect.php';
     
     if ($telepulesek != "" || $fromdate != "")
     {
-     $query= ("SELECT * FROM esemenyek WHERE esemeny_hely= '$telepulesek' OR esemeny_ido='$fdate' "); 
+     $query= ("SELECT * FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' AND esemenyek.telepulesek_telepules_id = telepulesek.telepules_id"); 
      $data= mysqli_query($connect, $query) OR die('error');
   
       if(mysqli_num_rows($data)>0)
@@ -141,14 +141,25 @@ include_once 'include/connect.php';
           while($row=mysqli_fetch_assoc($data))
           {
               $esemenyneve= $row['esemeny_nev'];  
-              $telepulesek= $row['esemeny_hely'];
+              $telepulesek1= $row['esemeny_hely'];
+              $telepulesid= $row['telepulesek_telepules_id'];
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
+
+              $query_telepulesid= ("SELECT telepules_nev FROM telepulesek WHERE telepules_id= '$telepulesid' "); 
+              $telepid1= mysqli_query($connect, $query_telepulesid) OR die('error');
+              if(mysqli_num_rows($telepid1)>0)
+              {
+                while($row=mysqli_fetch_assoc($telepid1))
+                  {
+                    $telepid= $row['telepules_nev']; 
+                  }
+              } 
           
              ?>
             <div class="row tablecolor">
               <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $esemenyneve; ?></div>
-              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $telepulesek; ?></div>
+              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $telepid; ?></div>
               <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $fromdate; ?></div>
               <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $esemenyleiras; ?></div>
             </div> 

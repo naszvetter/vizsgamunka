@@ -31,13 +31,23 @@ include_once 'include/connect.php';
             //új esemény rögzítése
             $esemenynev=mysqli_real_escape_string($connect, $_POST['esemeny_nev']);
             $esemenyhely=mysqli_real_escape_string($connect, $_POST['esemeny_hely']);
+            $query_telepulesektelepulesid= ("SELECT telepules_id FROM telepulesek WHERE telepules_nev= '$esemenyhely' "); 
+            $telepulesektelepulesid1= mysqli_query($connect, $query_telepulesektelepulesid) OR die('error');
+            if(mysqli_num_rows($telepulesektelepulesid1)>0)
+             {
+              while($row=mysqli_fetch_assoc($telepulesektelepulesid1))
+             {
+              $telepulesektelepulesid= $row['telepules_id']; 
+             }
+            }
             $esemenyido=mysqli_real_escape_string($connect, $_POST['esemeny_ido']);
             $esemenyleiras=mysqli_real_escape_string($connect, $_POST['esemeny_leiras']);
-            $telepulesektelepulesid=1;
+
+            $esemenyhely2="";
             $fdate= strtotime($esemenyido);
             $fdate= date("Y/m/d", $fdate);
 
-            $sql="INSERT INTO esemenyek(esemeny_nev, esemeny_hely,esemeny_ido , esemeny_leiras, telepulesek_telepules_id) VALUES('$esemenynev','$esemenyhely','$fdate','$esemenyleiras', '$telepulesektelepulesid')";
+            $sql="INSERT INTO esemenyek(esemeny_nev, esemeny_hely,esemeny_ido , esemeny_leiras, telepulesek_telepules_id) VALUES('$esemenynev','$esemenyhely2','$fdate','$esemenyleiras', '$telepulesektelepulesid')";
             $connect-> query($sql);
             //session_start();
            // $_SESSION['esemeny_nev']=$esemenynev;
