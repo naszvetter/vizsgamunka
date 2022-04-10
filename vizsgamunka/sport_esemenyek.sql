@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 09. 23:37
+-- Létrehozás ideje: 2022. Ápr 10. 21:14
 -- Kiszolgáló verziója: 10.4.22-MariaDB
 -- PHP verzió: 8.1.2
 
@@ -45,7 +45,9 @@ INSERT INTO `esemenyek` (`esemeny_id`, `esemeny_nev`, `esemeny_hely`, `esemeny_i
 (22, 'Szigetközi bringázás', '', '2022-04-14', 'Indulás 04.14-én a mosonmagyaróvári Fő térről 10:00-kor', 1789),
 (23, 'Sup túra a Balatonon', '', '2022-04-14', 'Indulás 04.14-én 10:00-kor a Kenesei szabadstrandról', 180),
 (24, 'Kerékpártúra az Örségben', '', '2022-05-31', 'Indulás Őriszentpéter Fő térről 05.31-én 10:00-kor', 2079),
-(25, 'Kerékpártúra a Börzsönyben', '', '2022-05-31', 'Indulás 05.31-én 10:00-kor a verőcei hajóállomástól', 3047);
+(25, 'Kerékpártúra a Börzsönyben', '', '2022-05-31', 'Indulás 05.31-én 10:00-kor a verőcei hajóállomástól', 3047),
+(26, 'Túrázás a Pilisben', '', '2022-04-14', 'Indulás 04.14-én 10:00-kor Pilisszentkereszt Fő térről', 2197),
+(27, 'Sup túra a Szigetközben', '', '2022-04-14', 'Indulás 04.14-én 10:00-kor a Duna utca 12. Duna parttól', 1789);
 
 -- --------------------------------------------------------
 
@@ -3371,7 +3373,7 @@ ALTER TABLE `telepulesek`
 -- AUTO_INCREMENT a táblához `esemenyek`
 --
 ALTER TABLE `esemenyek`
-  MODIFY `esemeny_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `esemeny_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalok`

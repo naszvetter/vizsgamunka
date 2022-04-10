@@ -133,7 +133,7 @@ include_once 'include/connect.php';
     
     if ($telepulesek != "" || $fromdate != "")
     {
-     $query= ("SELECT * FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' AND esemenyek.telepulesek_telepules_id = telepulesek.telepules_id"); 
+     $query= ("SELECT esemenyek.esemeny_nev , esemenyek.esemeny_hely , esemenyek.telepulesek_telepules_id , esemenyek.esemeny_ido , esemenyek.esemeny_leiras FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' OR telepulesek.telepules_nev ='$telepulesek' "); 
      $data= mysqli_query($connect, $query) OR die('error');
   
       if(mysqli_num_rows($data)>0)
@@ -142,7 +142,7 @@ include_once 'include/connect.php';
           {
               $esemenyneve= $row['esemeny_nev'];  
               $telepulesek1= $row['esemeny_hely'];
-              $telepulesid= $row['telepulesek_telepules_id'];
+              $telepulesid= $row['telepulesek_telepules_id']; 
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
 
