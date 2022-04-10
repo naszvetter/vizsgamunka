@@ -58,7 +58,7 @@ namespace s_port
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::s_port.Properties.Resources.login;
-            this.ClientSize = new System.Drawing.Size(333, 53);
+            this.ClientSize = new System.Drawing.Size(333, 42);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -28,7 +28,9 @@ namespace s_port
                 tableLayoutPanel1.RowCount = tableLayoutPanel1.RowCount + 1;
                 tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
                 tableLayoutPanel1.Controls.Add(new Label() { Text = oszlopok[i].ColumnName, ForeColor = Color.White }, 0, tableLayoutPanel1.RowCount - 1);
-                tableLayoutPanel1.Controls.Add(new TextBox(), 1, tableLayoutPanel1.RowCount - 1);
+                var textBox = new TextBox();
+                textBox.KeyDown += TextBox_KeyDown;
+                tableLayoutPanel1.Controls.Add(textBox,1, tableLayoutPanel1.RowCount - 1);
             }
 
             var hozzaadasGomb = new Button() { Text = "Hozzáadás" };
@@ -37,6 +39,14 @@ namespace s_port
             tableLayoutPanel1.Controls.Add(hozzaadasGomb, 1, tableLayoutPanel1.RowCount - 1);
         }
 
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                HozzaadasGomb_Click(null, null);
+                e.SuppressKeyPress = true;
+            }
+        }
         private void HozzaadasGomb_Click(object sender, EventArgs e)
         {
             var parancs = ParancsLetrehozasa();
