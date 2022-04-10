@@ -88,7 +88,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 563px;
+    width: 572px;
 }
 #navbar ul{
     position: relative;
@@ -111,11 +111,11 @@ header{
 }
 #navbar ul li a:hover{
     color: #fff;
-    background: #ee4300;
+    background: #dabc13;
 }
 /* responsive NAVBAR section */
 
-@media (max-width: 900px)
+@media (max-width: 600px)
 {
     #navbar{
         position: fixed;
@@ -139,13 +139,23 @@ header{
         align-items: center;
     }
 }
-.egesz{
-    height: 80%;
 
-    
+@media screen and (max-width: 2560px) {
+    .headcolor{ 
+        background-color: #eae6298f;
+    }
 }
-.form-control{
-    border-radius: 30px;
+
+@media screen and (max-width: 2560px) {
+    .tablecolor{
+        background-color: #9ec2ded7;
+    }
+}
+
+@media screen and (max-width: 991px) {
+   .reszletek{
+       display: none;
+   }
 }
 
 

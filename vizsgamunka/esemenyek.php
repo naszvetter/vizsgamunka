@@ -8,13 +8,14 @@ include_once 'include/connect.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
     <link rel="stylesheet" href="CSS/esemenyek.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="CSS/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="CSS/jquery-ui.css"-->
+    <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
     <script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
     <script type="text/javascript" src="js/jquery-ui.js" ></script>
     <script type="text/javascript">
+    
 
   $( function() {
     $( "#from" ).datepicker();
@@ -68,15 +69,15 @@ include_once 'include/connect.php';
 <!-- NAVbar vége -->
 
 <div class="container">
-<h3 style="text-align: center;font-weight:bold"> Sport események közötti keresés</h3>
+<h2 style="text-align: center;font-weight:bold"> Sport események közötti keresés</h2>
 
   <div class="row">
   <label></label>
     <form class="form-horizontal" action="esemenyek.php" method="POST">
   
-      <div class="form-group row">
+      <div class="form-group">
       <label></label>
-      <div class="col-sm-4">  
+      <div class="col-lg-4">  
         <select name="esemeny_hely" class="form-control" > 
         <option>Település választása</option>
         <?php
@@ -93,15 +94,15 @@ include_once 'include/connect.php';
 
   <div class="form-group">
   <label></label>
-    <div class="col-sm-4">
+    <div class="col-lg-4">
       <input type="text" name="esemeny_ido" id="from" class="form-control" placeholder="Időpont">
     </div>
   </div>
 
   <div class="form-group">
   <label></label>
-    <div class="col-sm-4">
-      <input type="submit"name="submit" class="btn btn-primary" value="Keresés">
+    <div class="col-lg-4">
+      <input type="submit"name="submit" class="btn btn btn-outline-warning" value="Keresés">
     </div>
   </div>
 
@@ -110,19 +111,17 @@ include_once 'include/connect.php';
 </div>
 
 
+
+      
 <div class="container">
-<div class="row">
-  <table class="table table-striped table-hoover">
-    <thead>
-      <tr>
-        <td>Esemény név</td>
-        <td>Esemény helye</td>
-        <td>Esemény időpontja</td>
-        <td>Részletek</td>
-      </tr>
-    </thead>
-  
-  <tbody>
+  <div class="table my-3">     
+    <div class="row headcolor">
+      <div class="col-sm-3 d-none d-sm-block text-white text-center fs-4 fw-bolder">Esemény név</div>
+      <div class="col-sm-3 d-none d-sm-block text-white text-center fs-4 fw-bolder">Esemény helye</div>
+      <div class="col-sm-3 d-none d-sm-block text-white text-center fs-4 fw-bolder">Esemény időpontja</div>
+      <div class="col-sm-3 d-none d-sm-block text-white text-center fs-4 fw-bolder reszletek">Részletek</div>
+    </div>
+        
     <?php
     include_once 'include/connect.php';
     if(isset($_POST['submit'])) 
@@ -131,10 +130,10 @@ include_once 'include/connect.php';
         $fromdate=$_POST['esemeny_ido'];
         $fdate= strtotime($fromdate);
         $fdate= date("Y/m/d", $fdate);
-    }
+    
     if ($telepulesek != "" || $fromdate != "")
     {
-     $query= ("SELECT * FROM esemenyek WHERE esemeny_hely= '$telepulesek' OR esemeny_ido='$fdate' "); 
+     $query= ("SELECT * FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' AND esemenyek.telepulesek_telepules_id = telepulesek.telepules_id"); 
      $data= mysqli_query($connect, $query) OR die('error');
   
       if(mysqli_num_rows($data)>0)
@@ -142,32 +141,46 @@ include_once 'include/connect.php';
           while($row=mysqli_fetch_assoc($data))
           {
               $esemenyneve= $row['esemeny_nev'];  
-              $telepulesek= $row['esemeny_hely'];
+              $telepulesek1= $row['esemeny_hely'];
+              $telepulesid= $row['telepulesek_telepules_id'];
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
+
+              $query_telepulesid= ("SELECT telepules_nev FROM telepulesek WHERE telepules_id= '$telepulesid' "); 
+              $telepid1= mysqli_query($connect, $query_telepulesid) OR die('error');
+              if(mysqli_num_rows($telepid1)>0)
+              {
+                while($row=mysqli_fetch_assoc($telepid1))
+                  {
+                    $telepid= $row['telepules_nev']; 
+                  }
+              } 
           
              ?>
-            <tr>
-              <td><?php echo $esemenyneve; ?></td>
-              <td><?php echo $telepulesek; ?></td>
-              <td><?php echo $fromdate; ?></td>
-              <td><?php echo $esemenyleiras; ?></td> 
-            </tr> 
+            <div class="row tablecolor">
+              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $esemenyneve; ?></div>
+              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $telepid; ?></div>
+              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $fromdate; ?></div>
+              <div class="col-lg-3 fs-5 text-center fw-bold"><?php echo $esemenyleiras; ?></div>
+            </div> 
             <?php 
           } 
-      }?>
-      else{
-        <tr>
-          <td>Nincs találat!</td>
-        </tr>
-        }<?php
+      }
+      ?>
+                 <!-- else{
+                    <tr>
+                      <td>Nincs találat!</td>
+                    </tr> -->
+   <?php
 
+    }?>
+    <?php
     }
     ?>
-  </tbody>
-  </table>
+    </div> 
 </div>
-</div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script
 
 </body>
