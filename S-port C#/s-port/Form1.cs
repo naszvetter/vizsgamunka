@@ -165,5 +165,25 @@ namespace s_port
             ParancsVegrehajtas(parancs);
             TablaLekeres(_aktualisTablaNeve);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (_aktualisTabla == null)
+            {
+                MessageBox.Show("Nem történt lekérdezés!", "Hiba");
+            }
+            else
+            {
+                var hozzaadas = new Hozzaadas(_aktualisTablaNeve, _aktualisTabla.Columns);
+
+                var hozzaadasEredmeny = hozzaadas.ShowDialog();
+
+                if (hozzaadasEredmeny == DialogResult.OK)
+                {
+                    TablaLekeres(_aktualisTablaNeve);
+                }
+            }
+           
+        }
     }
 }

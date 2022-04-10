@@ -178,3 +178,4 @@ C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.csproj.CopyCompl
 C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.exe
 C:\Users\User\Desktop\SFJ_GIT\S-port C#\s-port\obj\Debug\s-port.pdb
 C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s_port.Belepes.resources
+C:\Users\Kristóf\Documents\GitHub\vizsgamunka\S-port C#\s-port\obj\Debug\s_port.Hozzaadas.resources
