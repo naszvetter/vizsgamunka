@@ -140,6 +140,49 @@ header{
 
 /* NAVBAR finish */
 
+/* Új esemény tábla */
+.btn1{
+    box-shadow: 0 0 4px #fff;
+}
+input[name]:focus {
+    color: #fff;
+}
+
+input:focus,
+.btn1:hover {
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.radius{
+    background: rgba(121, 198, 239, 0.7);
+    border-radius: 15px;
+    height: 40px;
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .section{
+        margin: 0 auto 0;
+        text-align: center;
+        height: 50px;
+    }
+    .btn1{
+        width: 150px;   
+    }
+}
+@media screen and (max-width: 400px) {
+    .btn1{
+        width: 100px;   
+    }
+}
+
+
+
+
+
+
+
 
    
 

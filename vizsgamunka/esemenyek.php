@@ -48,26 +48,12 @@ include_once 'include/connect.php';
   </header>
   
 <!-- script kód a NAVbar-hoz-->
-  <script>
-    const header = document.getElementById('header');
-    const toggle = document.getElementById('toggle');
-    const navbar = document.getElementById('navbar');
-    
-    document.onclick = function(e){
-      if(e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar'){
-        toggle.classList.remove('active');
-        navbar.classList.remove('active');
-      }
-    }
-    
-    toggle.onclick = function(){
-      toggle.classList.toggle('active');
-      navbar.classList.toggle('active');
-    }
-  </script>
 
+  <script src="js/navbar.js"></script>
+  
 <!-- NAVbar vége -->
 
+<div class="section">
 <div class="container">
 <h2 style="text-align: center;font-weight:bold"> Sport események közötti keresés</h2>
 
@@ -75,10 +61,10 @@ include_once 'include/connect.php';
   <label></label>
     <form class="form-horizontal" action="esemenyek.php" method="POST">
   
-      <div class="form-group">
+    <div class="form-group">
       <label></label>
       <div class="col-lg-4">  
-        <select name="esemeny_hely" class="form-control" > 
+        <select name="esemeny_hely" class="radius" > 
         <option>Település választása</option>
         <?php
         $result2=mysqli_query($connect,"select * from telepulesek");
@@ -95,21 +81,21 @@ include_once 'include/connect.php';
   <div class="form-group">
   <label></label>
     <div class="col-lg-4">
-      <input type="text" name="esemeny_ido" id="from" class="form-control" placeholder="Időpont">
+      <input type="text" name="esemeny_ido" id="from" class="radius" placeholder="Időpont">
     </div>
   </div>
 
   <div class="form-group">
   <label></label>
     <div class="col-lg-4">
-      <input type="submit"name="submit" class="btn btn btn-outline-warning" value="Keresés">
+      <input type="submit" name="submit" class="radius btn1 btn-danger" value="Keresés">
     </div>
   </div>
 
   </form>
   </div>
 </div>
-
+</div>
 
 
       

@@ -157,7 +157,7 @@ header{
     align-items: center;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    color: #fff;
+    color: rgb(255, 255, 255);
     padding-top: 50px;
 }
 
@@ -173,7 +173,7 @@ input{
     outline: none;
     padding: 10px;
     font-size: 13px;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 4px #fff;    
 }
 
@@ -181,7 +181,7 @@ input{
     padding: 5px 20px;
     margin: 30px;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 4px #fff;
     cursor: pointer;
     color: rgb(226, 220, 215);

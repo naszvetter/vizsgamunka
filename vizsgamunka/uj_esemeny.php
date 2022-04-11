@@ -93,35 +93,21 @@ include_once 'include/connect.php';
     <div id=navbar>
       <ul>
         <li><a href="../esemenyek.php">Események</a></li>
-        <!--li><a href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a></li-->
-        <li><a href="#">Rólunk</a></li>
+        <li><a href="HTML/about_us.html">Rólunk</a></li>
         <li><a href="#">Kijelentkezés</a></li>
       </ul>
     </div>
   </header>
   
 <!-- script kód a NAVbar-hoz-->
-  <script>
-    const header = document.getElementById('header');
-    const toggle = document.getElementById('toggle');
-    const navbar = document.getElementById('navbar');
-    
-    document.onclick = function(e){
-      if(e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar'){
-        toggle.classList.remove('active');
-        navbar.classList.remove('active');
-      }
-    }
-    
-    toggle.onclick = function(){
-      toggle.classList.toggle('active');
-      navbar.classList.toggle('active');
-    }
-  </script>
 
-<!-- NAVbar vége -->
+<script src="js/navbar.js"></script>
+  
+  <!-- NAVbar vége -->
+  
+<div class="section">
+<div class=""><h2 style="text-align: center; font-weight: bold">Hozd létre saját sporteseményed</h2></div>
 
-<div><h2 style="text-align: center; font-weight: bold">Hozd létre saját sporteseményed</h2></div>
 
 <div class="container">
 <div class="row"> 
@@ -130,14 +116,33 @@ include_once 'include/connect.php';
     <div class="form-group">
       <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
-        <input type="text" name="esemeny_nev" class="form-control" placeholder="Esemény neve">
+        <input type="text" name="esemeny_nev" class="radius" placeholder="Esemény neve">
       </div>
     </div>
-              
+    
+    <!-- EZ LESZ A SPORTÁG VÁLASZTÓ, EHEZ ÍRD A PHP-T -->
+
+    <div class="form-group">
+      <label></label>
+      <div class="col-lg-4">  
+        <select name="" class="radius" > 
+        <option>Sportág választása</option>
+        <*?php
+        $result2=mysqli_query($connect,"select * from telepulesek");
+        while($row=mysqli_fetch_array($result2))
+        {
+         $telepules=$row['telepules_nev'];
+        echo "<option> $telepules </option>";
+        } 
+        ?*>
+        </select>
+        </div>
+    </div>
+
     <div class="form-group">
       <label></label>
       <div class="col-lg-4">
-        <select name="esemeny_hely" class="form-control"> 
+        <select name="esemeny_hely" class="radius"> 
           <option>Esemény helye</option>
             <?php
             $result2=mysqli_query($connect,"select * from telepulesek");
@@ -151,31 +156,35 @@ include_once 'include/connect.php';
       </div>
     </div>
 
-
     <div class="form-group">
         <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
-          <input type="text" name="esemeny_ido" id="from" class="form-control" placeholder="Esemény időpontja">
+          <input type="text" name="esemeny_ido" class="radius" placeholder="Esemény időpontja">
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
-        <input type="text" name="esemeny_leiras" class="form-control" maxlength="200" placeholder="Esemény részletei (max. 200 karakter)">
+        <input type="text" name="esemeny_leiras" class="radius" maxlength="200" placeholder="Esemény részletei (max. 200 karakter)">
       </div>
     </div>
+
+    
 
     <div class="form-group">
       <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
-        <input type="submit"name="submit" class="btn btn-primary" value="Rögzítés">
+        <input type="submit" name="submit" class="btn1 btn-danger radius" value="Rögzítés">
       </div>
     </div>
   </form>
     </form>
   </div>
 </div>
+</div>
+
+
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <?php
