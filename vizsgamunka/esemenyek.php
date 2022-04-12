@@ -62,35 +62,53 @@ include_once 'include/connect.php';
     <form class="form-horizontal" action="esemenyek.php" method="POST">
   
     <div class="form-group">
-      <label></label>
-      <div class="col-lg-4">  
-        <select name="esemeny_hely" class="radius" > 
-        <option>Település választása</option>
-        <?php
-        $result2=mysqli_query($connect,"select * from telepulesek");
-        while($row=mysqli_fetch_array($result2))
-        {
-         $telepules=$row['telepules_nev'];
-        echo "<option> $telepules </option>";
-        } 
-        ?>
-        </select>
+          <label></label>
+          <div class="col-lg-4">  
+            <select name="sportag" class="radius" > 
+            <option>Sportág választása</option>
+            <?php
+            $result3=mysqli_query($connect,"select * from sportok");
+            while($row=mysqli_fetch_array($result3))
+            {
+            $sport=$row['sport_nev'];
+            echo "<option> $sport </option>";
+            } 
+            ?>
+            </select>
+            </div>
         </div>
-    </div>
 
-  <div class="form-group">
-  <label></label>
-    <div class="col-lg-4">
-      <input type="text" name="esemeny_ido" id="from" class="radius" placeholder="Időpont">
-    </div>
-  </div>
 
-  <div class="form-group">
-  <label></label>
-    <div class="col-lg-4">
-      <input type="submit" name="submit" class="radius btn1 btn-danger" value="Keresés">
-    </div>
-  </div>
+        <div class="form-group">
+          <label></label>
+          <div class="col-lg-4">  
+            <select name="esemeny_hely" class="radius" > 
+            <option>Település választása</option>
+            <?php
+            $result2=mysqli_query($connect,"select * from telepulesek");
+            while($row=mysqli_fetch_array($result2))
+            {
+            $telepules=$row['telepules_nev'];
+            echo "<option> $telepules </option>";
+            } 
+            ?>
+            </select>
+            </div>
+        </div>
+
+      <div class="form-group">
+      <label></label>
+        <div class="col-lg-4">
+          <input type="text" name="esemeny_ido" id="from" class="radius" placeholder="Időpont">
+        </div>
+      </div>
+
+      <div class="form-group">
+      <label></label>
+        <div class="col-lg-4">
+          <input type="submit" name="submit" class="radius btn1 btn-danger" value="Keresés">
+        </div>
+      </div>
 
   </form>
   </div>
@@ -119,7 +137,7 @@ include_once 'include/connect.php';
     
     if ($telepulesek != "" || $fromdate != "")
     {
-     $query= ("SELECT esemenyek.esemeny_nev , esemenyek.esemeny_hely , esemenyek.telepulesek_telepules_id , esemenyek.esemeny_ido , esemenyek.esemeny_leiras FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' OR telepulesek.telepules_nev ='$telepulesek' "); 
+     $query= ("SELECT esemenyek.esemeny_nev , esemenyek.sport_id , esemenyek.telepulesek_telepules_id , esemenyek.esemeny_ido , esemenyek.esemeny_leiras FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' OR telepulesek.telepules_nev ='$telepulesek' "); 
      $data= mysqli_query($connect, $query) OR die('error');
   
       if(mysqli_num_rows($data)>0)
@@ -127,7 +145,7 @@ include_once 'include/connect.php';
           while($row=mysqli_fetch_assoc($data))
           {
               $esemenyneve= $row['esemeny_nev'];  
-              $telepulesek1= $row['esemeny_hely'];
+            //  $telepulesek1= $row['esemeny_hely'];
               $telepulesid= $row['telepulesek_telepules_id']; 
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
