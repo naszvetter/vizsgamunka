@@ -131,13 +131,14 @@ include_once 'include/connect.php';
     if(isset($_POST['submit'])) 
     {
         $telepulesek=$_POST['esemeny_hely'];
+        $sportok=$_POST['sportag'];
         $fromdate=$_POST['esemeny_ido'];
         $fdate= strtotime($fromdate);
         $fdate= date("Y/m/d", $fdate);
     
-    if ($telepulesek != "" || $fromdate != "")
+    if ($telepulesek != "" || $fromdate != "" || $sportok!="")
     {
-     $query= ("SELECT esemenyek.esemeny_nev , esemenyek.sport_id , esemenyek.telepulesek_telepules_id , esemenyek.esemeny_ido , esemenyek.esemeny_leiras FROM esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id WHERE esemeny_ido='$fdate' OR telepulesek.telepules_nev ='$telepulesek' "); 
+     $query= ("SELECT esemenyek.esemeny_nev , esemenyek.sport_id , esemenyek.telepulesek_telepules_id , esemenyek.esemeny_ido , esemenyek.esemeny_leiras FROM (esemenyek INNER JOIN telepulesek ON esemenyek.telepulesek_telepules_id=telepulesek.telepules_id) INNER JOIN sportok ON esemenyek.sport_id=sportok.sport_id WHERE esemeny_ido='$fdate' OR telepulesek.telepules_nev ='$telepulesek' OR sportok.sport_nev='$sportok'"); 
      $data= mysqli_query($connect, $query) OR die('error');
   
       if(mysqli_num_rows($data)>0)
