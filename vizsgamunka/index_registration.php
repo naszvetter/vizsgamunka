@@ -63,7 +63,7 @@ include_once 'include/connect.php';
 </head>
 <body>
 
-<! --Itt kezdődik a NAVbar -->
+<!-- Itt kezdődik a NAVbar -->
 
   <header>
     <a href="#" class="logo">S-port</a>
@@ -71,7 +71,7 @@ include_once 'include/connect.php';
     <div id=navbar>
       <ul>
         
-        <li><a href="#">Rólunk</a></li>
+        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
         <li><a href="#">ÁFSZ</a></li>
         
       </ul>
@@ -84,7 +84,7 @@ include_once 'include/connect.php';
   
   <!-- NAVbar vége -->
   
-<! -- regisztáció start -->
+<!-- regisztáció start -->
 
     <form action="index_registration.php" method="POST">
       <div class="container-login">
@@ -101,7 +101,7 @@ include_once 'include/connect.php';
       </div>    
     </form>
 
-<! -- regisztráció finish -->
+<!-- regisztráció finish -->
 
     <?php
     if(!empty($errors))

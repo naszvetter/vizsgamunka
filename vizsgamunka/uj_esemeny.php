@@ -105,8 +105,8 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="../esemenyek.php">Események</a></li>
-        <li><a href="HTML/about_us.html">Rólunk</a></li>
+        <li><a href="../vizsgamunka/esemenyek.php">Események</a></li>
+        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
         <li><a href="#">Kijelentkezés</a></li>
       </ul>
     </div>

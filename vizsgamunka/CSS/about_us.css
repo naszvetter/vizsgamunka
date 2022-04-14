@@ -1,5 +1,5 @@
 body{
-    background: url("../IMG/") no-repeat;
+    background: url("../IMG/kereses_eredmeny.jpg") no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -25,6 +25,8 @@ header{
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    height: 60px;
+    z-index: 10;
 }
 .logo{
     height: 60xp;
@@ -112,7 +114,7 @@ header{
 }
 /* responsive NAVBAR section */
 
-@media (max-width: 991px)
+@media (max-width: 992px)
 {
     #navbar{
         position: fixed;
@@ -138,6 +140,17 @@ header{
 }
 
 /* NAVBAR finish */
+
+.section{
+    z-index: -10;
+}
+
+@media screen and (max-width: 991) {
+    .section{
+        width: 100%;
+    }
+    
+}
 
 
 
