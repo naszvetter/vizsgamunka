@@ -1,0 +1,162 @@
+body{
+    background: url("../IMG/esemenyek.png") no-repeat;
+    background-position: center;
+    
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Catamaran', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Cabin', sans-serif;
+    color: rgb(230, 191, 165);
+    max-width: 100%;
+    height: auto;
+    padding-top: 60px;
+    /*background-size: contain;*/
+}
+
+/* NAVBAR start */
+
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    height: 60px;
+    z-index: 10;
+}
+.logo{
+    height: 60xp;
+    line-height: 60xp;
+    color: #12334e;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    cursor: pointer;
+    padding-left: 20px;
+    text-decoration: none; 
+}
+#toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #ee4300;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#toggle::before{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+#toggle::after{
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.5s;
+}
+#toggle.active::before{
+    transform: translateY(0px) rotate(45deg);
+}
+#toggle.active::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+#toggle.active{
+    background: #ff0000;
+}
+#navbar{
+    position: relative;
+    height: 60px;
+    right: 60px;
+    background: #fff;
+    transition: 0.5s;
+    width: 0px;
+    overflow: hidden;
+}
+#navbar.active{
+    width: 572px;
+}
+#navbar ul{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#navbar ul li{
+    list-style: none;
+}
+#navbar ul li a{
+    color: #12334e;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0 15px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+#navbar ul li a:hover{
+    color: #fff;
+    background: #dabc13;
+}
+/* responsive NAVBAR section */
+
+@media (max-width: 600px)
+{
+    #navbar{
+        position: fixed;
+        bottom: -100%;
+        right: 0;
+        width: 100%;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 59px);
+    }
+    #navbar.active{
+        
+        bottom: 0;
+        width: 100%;
+    }
+    #navbar ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+    .headcolor{ 
+        background-color: #eae6298f;
+    }
+}
+
+@media screen and (max-width: 2560px) {
+    .tablecolor{
+        background-color: #9ec2ded7;
+    }
+}
+
+@media screen and (max-width: 991px) {
+   .reszletek{
+       display: none;
+   }
+}
+
+
+
