@@ -86,7 +86,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 714px;
+    width: 630px;
 }
 #navbar ul{
     position: relative;
@@ -108,7 +108,7 @@ header{
 }
 #navbar ul li a:hover{
     color: #fff;
-    background: #ee4300;
+    background: #dabc13;
 }
 /* responsive NAVBAR section */
 
@@ -139,13 +139,6 @@ header{
 
 /* NAVBAR finish */
 
-/* login start */
 
-.form-container{
-    position: absolute;
-    top: 25vh;
-    background: transparent;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000;
-}
+
+

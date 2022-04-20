@@ -70,38 +70,19 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="esemenyek.php">Események</a></li>
-        <li><a href="uj_esemeny.php">Új esemény léterhozása</a></li>
+        
         <li><a href="#">Rólunk</a></li>
-        <li><a href="#">Kijelentkezés</a></li>
+        <li><a href="#">ÁFSZ</a></li>
+        
       </ul>
     </div>
   </header>
   
+<!-- script kód a NAVbar-hoz-->
 
-
-
-<! -- script kód a NAVbar-hoz -->
-  <script>
-    const header = document.getElementById('header');
-    const toggle = document.getElementById('toggle');
-    const navbar = document.getElementById('navbar');
-    
-    document.onclick = function(e){
-      if(e.target.id !== 'header' && e.target.id !== 'toggle' && e.target.id !== 'navbar'){
-        toggle.classList.remove('active');
-        navbar.classList.remove('active');
-      }
-    }
-    
-    toggle.onclick = function(){
-      toggle.classList.toggle('active');
-      navbar.classList.toggle('active');
-    }
-  </script>
-
-<! -- NAVbar vége -->
-
+<script src="js/navbar.js"></script>
+  
+  <!-- NAVbar vége -->
   
 <! -- regisztáció start -->
 
@@ -132,8 +113,6 @@ include_once 'include/connect.php';
     }
 
     ?>
-
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -85,7 +85,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 732px;
+    width: 222px;
 }
 #navbar ul{
     position: relative;
@@ -173,7 +173,7 @@ input{
     outline: none;
     padding: 10px;
     font-size: 13px;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 4px #fff;    
 }
 
@@ -183,7 +183,7 @@ input{
     padding: 5px 20px;
     margin-top: 30px;
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 0 4px #fff;
     cursor: pointer;
     color: rgb(226, 220, 215);

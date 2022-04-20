@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 09. 23:37
+-- Létrehozás ideje: 2022. Ápr 13. 00:06
 -- Kiszolgáló verziója: 10.4.22-MariaDB
 -- PHP verzió: 8.1.2
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `esemenyek` (
   `esemeny_id` int(11) NOT NULL,
   `esemeny_nev` varchar(45) DEFAULT NULL,
-  `esemeny_hely` varchar(45) DEFAULT NULL,
+  `sport_id` int(11) NOT NULL,
   `esemeny_ido` date DEFAULT NULL,
   `esemeny_leiras` varchar(200) DEFAULT NULL,
   `telepulesek_telepules_id` int(20) NOT NULL
@@ -40,12 +40,15 @@ CREATE TABLE `esemenyek` (
 -- A tábla adatainak kiíratása `esemenyek`
 --
 
-INSERT INTO `esemenyek` (`esemeny_id`, `esemeny_nev`, `esemeny_hely`, `esemeny_ido`, `esemeny_leiras`, `telepulesek_telepules_id`) VALUES
-(21, 'Bringázás a Dunakanyarban', '', '2022-04-10', 'Indulás 04.10-én a váci kikötőból', 2956),
-(22, 'Szigetközi bringázás', '', '2022-04-14', 'Indulás 04.14-én a mosonmagyaróvári Fő térről 10:00-kor', 1789),
-(23, 'Sup túra a Balatonon', '', '2022-04-14', 'Indulás 04.14-én 10:00-kor a Kenesei szabadstrandról', 180),
-(24, 'Kerékpártúra az Örségben', '', '2022-05-31', 'Indulás Őriszentpéter Fő térről 05.31-én 10:00-kor', 2079),
-(25, 'Kerékpártúra a Börzsönyben', '', '2022-05-31', 'Indulás 05.31-én 10:00-kor a verőcei hajóállomástól', 3047);
+INSERT INTO `esemenyek` (`esemeny_id`, `esemeny_nev`, `sport_id`, `esemeny_ido`, `esemeny_leiras`, `telepulesek_telepules_id`) VALUES
+(21, 'Bringázás a Dunakanyarban', 25, '2022-04-10', 'Indulás 04.10-én a váci kikötőból', 2956),
+(22, 'Szigetközi bringázás', 25, '2022-04-14', 'Indulás 04.14-én a mosonmagyaróvári Fő térről 10:00-kor', 1789),
+(23, 'Sup túra a Balatonon', 48, '2022-04-14', 'Indulás 04.14-én 10:00-kor a Kenesei szabadstrandról', 180),
+(24, 'Kerékpártúra az Örségben', 25, '2022-05-31', 'Indulás Őriszentpéter Fő térről 05.31-én 10:00-kor', 2079),
+(25, 'Kerékpártúra a Börzsönyben', 25, '2022-05-31', 'Indulás 05.31-én 10:00-kor a verőcei hajóállomástól', 3047),
+(26, 'Túrázás a Pilisben', 63, '2022-04-14', 'Indulás 04.14-én 10:00-kor Pilisszentkereszt Fő térről', 2197),
+(27, 'Sup túra a Szigetközben', 48, '2022-04-14', 'Indulás 04.14-én 10:00-kor a Duna utca 12. Duna parttól', 1789),
+(29, 'Balaton átúszás', 59, '2022-07-30', 'Kezdés a balatonboglári Platán strandon 07.30-án 10:00-kor', 169);
 
 -- --------------------------------------------------------
 
@@ -81,7 +84,6 @@ INSERT INTO `felhasznalok` (`felhasznalo_id`, `felhasznalo_nev`, `jelszo`, `emai
 (6, 'Próba', '6a92b221da700603e7d7ceeeb9ffd1ae', 'proba@axelero.hu'),
 (7, 'vamos', '6a92b221da700603e7d7ceeeb9ffd1ae', 'vamos@gmail.com'),
 (8, 'naszvetter', '1c7acb27af2b0128b6851fe1f3f0dfe4', 'bela.naszvetter@gmail.com'),
-(9, 'naszvetter', '1c7acb27af2b0128b6851fe1f3f0dfe4', 'bela.naszvetter@gmail.com'),
 (10, 'nagy', 'babd4a84418fb04015ac773f7459727c', 'nagy@gmail.com'),
 (11, 'vamosatesz', '827ccb0eea8a706c4c34a16891f84e7b', 'atti89@freemail.hu'),
 (12, 'teszt1', 'babd4a84418fb04015ac773f7459727c', 'teszt@axelero.hu'),
@@ -118,10 +120,69 @@ CREATE TABLE `sportok` (
 --
 
 INSERT INTO `sportok` (`sport_id`, `sport_nev`) VALUES
-(1, 'Tenisz'),
-(2, 'Kerékpár'),
-(3, 'Túrázás'),
-(4, 'Kosárlabda');
+(1, 'Amerikai futball‎'),
+(2, 'Asztalitenisz‎'),
+(3, 'Atlétika‎'),
+(4, 'Autóversenyzés‎'),
+(5, 'Baseball‎ '),
+(6, 'Biatlon‎ '),
+(7, 'Biliárd‎ '),
+(8, 'Bob‎ '),
+(9, 'Búvárkodás‎ '),
+(10, 'Curling‎ '),
+(11, 'Darts‎ '),
+(12, 'E-sport‎ '),
+(13, 'Evezés‎ '),
+(14, 'Fallabda‎ '),
+(15, 'Futsal‎ '),
+(16, 'Golf‎ '),
+(17, 'Golyózás‎ '),
+(18, 'Gördeszkázás‎ '),
+(19, 'Gyeplabda‎ '),
+(20, 'Gyorskorcsolya‎ '),
+(21, 'Hegymászás‎ '),
+(22, 'Íjászat‎ '),
+(23, 'Jégkorong‎ '),
+(24, 'Kajak-kenu‎ '),
+(25, 'Kerékpározás'),
+(26, 'Kézilabda‎ '),
+(27, 'Korcsolyázás'),
+(28, 'Kosárlabda‎ '),
+(29, 'Krikett‎ '),
+(30, 'Küzdősportok‎ '),
+(31, 'Labdarúgás‎ '),
+(32, 'Lovaglás'),
+(33, 'Motorversenyzés‎ '),
+(34, 'Műkorcsolya‎ '),
+(35, 'Műugrás‎ '),
+(36, 'Öttusa‎ '),
+(37, 'Parasportágak‎ '),
+(38, 'Repülősportok‎ '),
+(39, 'Ritmikus sportgimnasztika‎ '),
+(40, 'Rögbi‎ '),
+(41, 'Röplabda‎ '),
+(42, 'Sakk‎ '),
+(43, 'Sí‎ '),
+(44, 'Snowboard‎ '),
+(45, 'Sportlövészet‎ '),
+(46, 'Sportmászás‎ '),
+(47, 'Súlyemelés‎ '),
+(48, 'SUP'),
+(49, 'Szánkó‎ '),
+(50, 'Szörfözés‎ '),
+(51, 'Tájfutás‎ '),
+(52, 'Teke‎ '),
+(53, 'Tenisz‎ '),
+(54, 'Teqball‎ '),
+(55, 'Testépítés‎ '),
+(56, 'Tollaslabda‎ '),
+(57, 'Torna‎ '),
+(58, 'Triatlon‎ '),
+(59, 'Úszás‎ '),
+(60, 'Vitorlázás‎ '),
+(61, 'Vívás‎ '),
+(62, 'Vízilabda‎ '),
+(63, 'Gyalogtúra');
 
 -- --------------------------------------------------------
 
@@ -537,24 +598,24 @@ INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
 (396, 'BUDAPEST III.kerület'),
 (397, 'BUDAPEST IV:kerület'),
 (398, 'BUDAPEST V.kerület'),
-(399, 'BUDAPEST06'),
-(400, 'BUDAPEST07'),
-(401, 'BUDAPEST08'),
-(402, 'BUDAPEST09'),
-(403, 'BUDAPEST10'),
-(404, 'BUDAPEST11'),
-(405, 'BUDAPEST12'),
-(406, 'BUDAPEST13'),
-(407, 'BUDAPEST14'),
-(408, 'BUDAPEST15'),
-(409, 'BUDAPEST16'),
-(410, 'BUDAPEST17'),
-(411, 'BUDAPEST18'),
-(412, 'BUDAPEST19'),
-(413, 'BUDAPEST20'),
-(414, 'BUDAPEST21'),
-(415, 'BUDAPEST22'),
-(416, 'BUDAPEST23'),
+(399, 'BUDAPEST VI.kerület'),
+(400, 'BUDAPEST VII.kerület'),
+(401, 'BUDAPEST VIII.kerület'),
+(402, 'BUDAPEST IX.kerület'),
+(403, 'BUDAPEST X.kerület'),
+(404, 'BUDAPEST XI.kerület'),
+(405, 'BUDAPEST XII.kerület'),
+(406, 'BUDAPEST XIII.kerület'),
+(407, 'BUDAPEST XIV.kerület'),
+(408, 'BUDAPEST XV.kerület'),
+(409, 'BUDAPEST XVI.kerület'),
+(410, 'BUDAPEST XVII.kerület'),
+(411, 'BUDAPEST XVIII.kerület'),
+(412, 'BUDAPEST XIX.kerület'),
+(413, 'BUDAPEST XX.kerület'),
+(414, 'BUDAPEST XXI.kerület'),
+(415, 'BUDAPEST XXII.kerület'),
+(416, 'BUDAPEST XXIII.kerület'),
 (417, 'BUGAC'),
 (418, 'BUGACPUSZTAHÁZA'),
 (419, 'BUGYI'),
@@ -2864,7 +2925,8 @@ INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
 (2723, 'TÁPIÓSZENTMÁRTON'),
 (2724, 'TÁPIÓSZŐLŐS'),
 (2725, 'TÁPLÁNSZENTKERESZT'),
-(2726, 'TAPOLCA'),
+(2726, 'TAPOLCA');
+INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
 (2727, 'TAPSONY'),
 (2728, 'TÁPSZENTMIKLÓS'),
 (2729, 'TAR'),
@@ -2875,8 +2937,7 @@ INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
 (2734, 'TARDOS'),
 (2735, 'TARHOS'),
 (2736, 'TARJÁN'),
-(2737, 'TARJÁNPUSZTA');
-INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
+(2737, 'TARJÁNPUSZTA'),
 (2738, 'TÁRKÁNY'),
 (2739, 'TARNABOD'),
 (2740, 'TARNALELESZ'),
@@ -3327,7 +3388,9 @@ INSERT INTO `telepulesek` (`telepules_id`, `telepules_nev`) VALUES
 -- A tábla indexei `esemenyek`
 --
 ALTER TABLE `esemenyek`
-  ADD PRIMARY KEY (`esemeny_id`,`telepulesek_telepules_id`);
+  ADD PRIMARY KEY (`esemeny_id`,`telepulesek_telepules_id`),
+  ADD KEY `fk_esemenyek_telepulesek1` (`telepulesek_telepules_id`),
+  ADD KEY `sport_id` (`sport_id`);
 
 --
 -- A tábla indexei `esemenyek_has_sportok`
@@ -3341,7 +3404,9 @@ ALTER TABLE `esemenyek_has_sportok`
 -- A tábla indexei `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`felhasznalo_id`);
+  ADD PRIMARY KEY (`felhasznalo_id`),
+  ADD UNIQUE KEY `felhasznalo_nev` (`felhasznalo_nev`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- A tábla indexei `felhasznalok_has_esemenyek`
@@ -3371,19 +3436,19 @@ ALTER TABLE `telepulesek`
 -- AUTO_INCREMENT a táblához `esemenyek`
 --
 ALTER TABLE `esemenyek`
-  MODIFY `esemeny_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `esemeny_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `felhasznalo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `felhasznalo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT a táblához `sportok`
 --
 ALTER TABLE `sportok`
-  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sport_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- Megkötések a kiírt táblákhoz
@@ -3393,14 +3458,8 @@ ALTER TABLE `sportok`
 -- Megkötések a táblához `esemenyek`
 --
 ALTER TABLE `esemenyek`
+  ADD CONSTRAINT `esemenyek_ibfk_1` FOREIGN KEY (`sport_id`) REFERENCES `sportok` (`sport_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_esemenyek_telepulesek1` FOREIGN KEY (`telepulesek_telepules_id`) REFERENCES `telepulesek` (`telepules_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Megkötések a táblához `esemenyek_has_sportok`
---
-ALTER TABLE `esemenyek_has_sportok`
-  ADD CONSTRAINT `fk_esemenyek_has_sportok_esemenyek1` FOREIGN KEY (`esemenyek_esemeny_id`,`esemenyek_telepulesek_telepules_id`) REFERENCES `esemenyek` (`esemeny_id`, `telepulesek_telepules_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_esemenyek_has_sportok_sportok1` FOREIGN KEY (`sportok_sport_id`) REFERENCES `sportok` (`sport_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Megkötések a táblához `felhasznalok_has_esemenyek`
