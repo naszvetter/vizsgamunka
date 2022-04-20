@@ -71,8 +71,8 @@ include_once 'include/connect.php';
     <div id=navbar>
       <ul>
         
-        <li><a href="#">Rólunk</a></li>
-        <li><a href="#">ÁFSZ</a></li>
+        <li><a href="HTML/about_us.html">Rólunk</a></li>
+        <li><a href="HTML/aszf.html">ÁFSZ</a></li>
         
       </ul>
     </div>

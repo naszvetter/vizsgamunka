@@ -41,7 +41,7 @@ include_once 'include/connect.php';
       <ul>
         <!--li><a href="#">Események</a></li-->
         <li><a href="./uj_esemeny.php">Új esemény léterhozása</a></li>
-        <li><a href="#">Rólunk</a></li>
+        <li><a href="HTML/about_us.html">Rólunk</a></li>
         <li><a href="#">Kijelentkezés</a></li>
       </ul>
     </div>
