@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pQVzbFA1aftdyW2TzipcQk0YqDnrrWMDlrrTCR/YSA0=</dsig:DigestValue>
+        <dsig:DigestValue>P7Ho7Tkd9WG3nswfszdUcIJtrn9p0VKGY+RfoooS6rk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -197,13 +197,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="s-port.exe.config" size="552">
+  <file name="s-port.exe.config" size="565">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9MkSZCAapjHf5rCdUZRBXA/u64jtX9I4ddnQnxqsheo=</dsig:DigestValue>
+      <dsig:DigestValue>KgVDbvLTnrGqv/bJep8nqNqmI3Qhdr1KgezDEArnBaw=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

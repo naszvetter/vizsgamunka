@@ -175,7 +175,7 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "Törlés";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.Torles);
             // 
             // button7
             // 
@@ -185,7 +185,7 @@
             this.button7.TabIndex = 10;
             this.button7.Text = "Hozzáadás";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.Click += new System.EventHandler(this.Hozzadas);
             // 
             // Form1
             // 
