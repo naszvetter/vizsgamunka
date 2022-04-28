@@ -10,7 +10,7 @@ include_once 'include/connect.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/esemenyek.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="CSS/jquery-ui.css"-->
+    <link rel="stylesheet" type="text/css" href="CSS/jquery-ui.css">
     <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
     <script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
     <script type="text/javascript" src="js/jquery-ui.js" ></script>
@@ -26,32 +26,33 @@ include_once 'include/connect.php';
     } );
 
   </script>
-
-
+    
     <title>Események</title>
+    
 </head>
 <body>
 
-  <!--Itt kezdődik a NAVbar-->
+  <!--NAVbar start-->
 
   <header>
-    <a href="#" class="logo">S-port</a>
+    <a href="esemenyek.php" class="logo">S-port</a>
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <!--li><a href="#">Események</a></li-->
-        <li><a href="./uj_esemeny.php">Új esemény léterhozása</a></li>
-        <li><a href="HTML/about_us.html">Rólunk</a></li>
-        <li><a href="#">Kijelentkezés</a></li>
+        <li><a href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a></li>
+        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
+        <li><a href="index_login.php">Kijelentkezés</a></li>
       </ul>
     </div>
   </header>
   
-<!-- script kód a NAVbar-hoz-->
+<!--script kód a NAVbar-hoz-->
 
   <script src="js/navbar.js"></script>
   
-<!-- NAVbar vége -->
+<!--NAVbar finish-->
+
+<!--Események keresése tábla-->
 
 <div class="section">
 <div class="container">
@@ -115,8 +116,10 @@ include_once 'include/connect.php';
 </div>
 </div>
 
+<!--Események keresése vége-->
 
-      
+<!--Keresés eredmény-->
+
 <div class="container">
   <div class="table my-3">     
     <div class="row headcolor">
@@ -146,7 +149,6 @@ include_once 'include/connect.php';
           while($row=mysqli_fetch_assoc($data))
           {
               $esemenyneve= $row['esemeny_nev'];  
-            //  $telepulesek1= $row['esemeny_hely'];
               $telepulesid= $row['telepulesek_telepules_id']; 
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
@@ -172,10 +174,7 @@ include_once 'include/connect.php';
           } 
       }
       ?>
-                 <!-- else{
-                    <tr>
-                      <td>Nincs találat!</td>
-                    </tr> -->
+                 
    <?php
 
     }?>
@@ -185,8 +184,10 @@ include_once 'include/connect.php';
     </div> 
 </div>
 
+<!--Keresés eredmény vége-->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

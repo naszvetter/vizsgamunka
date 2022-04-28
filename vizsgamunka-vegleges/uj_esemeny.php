@@ -93,30 +93,32 @@ include_once 'include/connect.php';
     } );
 
   </script>
-    
-</head>
     <title>Új esemény</title>
+</head>
+    
 <body>
     
- <!--Itt kezdődik a NAVbar-->
+<!--NAVbar start-->
 
  <header>
-    <a href="#" class="logo">S-port</a>
+    <a href="esemenyek.php" class="logo">S-port</a>
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="./esemenyek.php">Események</a></li>
-        <li><a href="HTML/about_us.html">Rólunk</a></li>
-        <li><a href="#">Kijelentkezés</a></li>
+        <li><a href="../vizsgamunka/esemenyek.php">Események</a></li>
+        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
+        <li><a href="index_login.php">Kijelentkezés</a></li>
       </ul>
     </div>
   </header>
   
-<!-- script kód a NAVbar-hoz-->
+<!--script kód a NAVbar-hoz-->
 
 <script src="js/navbar.js"></script>
   
-  <!-- NAVbar vége -->
+<!--NAVbar finish-->
+
+<!--Új esemény létrehozása start-->
   
 <div class="section">
 <div class=""><h2 style="text-align: center; font-weight: bold">Hozd létre saját sporteseményed</h2></div>
@@ -133,8 +135,6 @@ include_once 'include/connect.php';
       </div>
     </div>
     
-    <!-- EZ LESZ A SPORTÁG VÁLASZTÓ, EHEZ ÍRD A PHP-T -->
-
     <div class="form-group">
       <label></label>
       <div class="col-lg-4">  
@@ -183,8 +183,6 @@ include_once 'include/connect.php';
       </div>
     </div>
 
-    
-
     <div class="form-group">
       <label class="col-lg-2 control-label"></label>
       <div class="col-lg-4">
@@ -197,7 +195,7 @@ include_once 'include/connect.php';
 </div>
 </div>
 
-
+<!--Új esemény létrehozása finish-->
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <?php

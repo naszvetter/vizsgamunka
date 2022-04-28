@@ -57,23 +57,20 @@ include_once 'include/connect.php';
     <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon2.png">
     <link rel="stylesheet" href="CSS/style_registration.css">
     
-    
     <title>Regisztráció</title>
     
 </head>
 <body>
 
-<! --Itt kezdődik a NAVbar -->
+<!--NAVbar start-->
 
   <header>
-    <a href="#" class="logo">S-port</a>
+    <a href="./HTML/AFSZ.html" class="logo">S-port</a>
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        
-        <li><a href="HTML/about_us.html">Rólunk</a></li>
-        <li><a href="HTML/aszf.html">ÁFSZ</a></li>
-        
+        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
+        <li><a href="./HTML/AFSZ.html">Adatkezelés</a></li>
       </ul>
     </div>
   </header>
@@ -82,9 +79,9 @@ include_once 'include/connect.php';
 
 <script src="js/navbar.js"></script>
   
-  <!-- NAVbar vége -->
+<!--NAVbar finish-->
   
-<! -- regisztáció start -->
+<!--Registration start-->
 
     <form action="index_registration.php" method="POST">
       <div class="container-login">
@@ -101,7 +98,7 @@ include_once 'include/connect.php';
       </div>    
     </form>
 
-<! -- regisztráció finish -->
+<!--Registration finish-->
 
     <?php
     if(!empty($errors))
@@ -114,10 +111,8 @@ include_once 'include/connect.php';
 
     ?>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
-
 
 </html>
