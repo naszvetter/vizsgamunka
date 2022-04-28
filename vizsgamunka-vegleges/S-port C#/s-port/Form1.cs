@@ -38,7 +38,7 @@ namespace s_port
         private void TablaLekeres(string tabla)
         {          
             _aktualisTablaNeve = tabla;
-            string query = "SELECT * FROM sport." + tabla;
+            string query = "SELECT * FROM sport_esemenyek." + tabla;
             AdatokLekerese(query);
         }
         private void AdatokLekerese(string parancs)
@@ -143,7 +143,7 @@ namespace s_port
             Application.Exit();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Torles(object sender, EventArgs e)
         {
             if (_aktualisTabla == null) 
             {
@@ -155,18 +155,18 @@ namespace s_port
             }
             else
             {
-                var kijeloltSorId = _aktualisTabla.Rows[dataGridView1.CurrentCell.RowIndex][0];
+                var kijeloltSorId = (dataGridView1.DataSource as DataTable).Rows[dataGridView1.CurrentCell.RowIndex][0];
                 SorTorlese(kijeloltSorId.ToString());
             }
         }
         private void SorTorlese(string Id)
         {
-            string parancs = "DELETE FROM SPORT." + _aktualisTablaNeve + " WHERE " + _aktualisTabla.Columns[0].ColumnName + " = " + Id;
+            string parancs = "DELETE FROM sport_esemenyek." + _aktualisTablaNeve + " WHERE " + _aktualisTabla.Columns[0].ColumnName + " = " + Id;
             ParancsVegrehajtas(parancs);
             TablaLekeres(_aktualisTablaNeve);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Hozzadas(object sender, EventArgs e)
         {
             if (_aktualisTabla == null)
             {
