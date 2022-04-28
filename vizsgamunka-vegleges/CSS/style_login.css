@@ -84,7 +84,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 563px;
+    width: 291px;
 }
 #navbar ul{
     position: relative;
@@ -138,7 +138,6 @@ header{
 /* NAVBAR finish */
 
 
-
 /* login form css start */
 
 .container-login{
@@ -147,10 +146,9 @@ header{
     left: 75%;
     transform: translate(-50%, -50%);
 }
-
 .login-form{
     height: 100%;
-    width: 100;
+    width: 100%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -160,12 +158,9 @@ header{
     color: rgb(255, 255, 255);
     padding-top: 50px;
 }
-
 .login h3{
     letter-spacing: 1px;
-
 }
-
 input{
     width: 300px;
     margin: 20px;
@@ -176,7 +171,6 @@ input{
     border-radius: 15px;
     box-shadow: 0 0 4px #fff;    
 }
-
 .btn{
     padding: 5px 20px;
     margin: 30px;
@@ -186,11 +180,9 @@ input{
     cursor: pointer;
     color: rgb(226, 220, 215);
 }
-
 input[name]:focus {
     color: #fff;
 }
-
 input:focus,
 .btn:hover {
     box-shadow: 0 0 10px rgb(175, 235, 9);
@@ -206,7 +198,6 @@ input:focus,
         padding: 30px;
         margin: auto;
         z-index: -10;
-        
     }
     .input{
         width: 250px;
@@ -221,9 +212,7 @@ input:focus,
 }
 @media screen and (max-width: 480px)
 {   
-    
     .container-login{
-        /*background: rgb(39, 35, 35, 0.2);*/
         height: 560px;
         width: 430px;
         top: 54%;
@@ -246,9 +235,7 @@ input:focus,
 }
 @media screen and (max-width: 425px)
 {   
-    
     .container-login{
-        /*background: rgb(39, 35, 35, 0.2);*/
         height: 560px;
         width: 390px;
         top: 54%;
@@ -271,9 +258,7 @@ input:focus,
 }
 @media screen and (max-width: 376px)
 {   
-    
     .container-login{
-        /*background: rgb(39, 35, 35, 0.2);*/
         height: 560px;
         width: 350px;
         top: 54%;
@@ -296,9 +281,7 @@ input:focus,
 }
 @media screen and (max-width: 341px)
 {   
-    
     .container-login{
-        /*background: rgb(39, 35, 35, 0.2);*/
         height: 560px;
         width: 325px;
         top: 54%;
@@ -321,9 +304,7 @@ input:focus,
 }
 @media screen and (max-width: 320px)
 {   
-    
     .container-login{
-        /*background: rgb(39, 35, 35, 0.2);*/
         height: 560px;
         width: 305px;
         top: 54%;
@@ -344,5 +325,6 @@ input:focus,
         
     }
 }
+
 /* Login form css end */
 

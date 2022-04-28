@@ -1,5 +1,5 @@
 body{
-    background: url("../IMG/registration3.png") no-repeat;
+    background: url("../IMG/adatkezeles.png") no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -21,14 +21,15 @@ header{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: rgb(255, 255, 255);
+    background: #fff;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     height: 60px;
+    z-index: 10;
 }
 .logo{
     height: 60xp;
     line-height: 60xp;
-    color: #38013f;
+    color: #12334e;
     font-weight: 700;
     font-size: 2em;
     text-decoration: none;
@@ -42,7 +43,7 @@ header{
     right: 0;
     width: 60px;
     height: 60px;
-    background: #e44608;
+    background: #ee4300;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -85,7 +86,7 @@ header{
     overflow: hidden;
 }
 #navbar.active{
-    width: 291px;
+    width: 470px;
 }
 #navbar ul{
     position: relative;
@@ -94,7 +95,6 @@ header{
 }
 #navbar ul li{
     list-style: none;
-    
 }
 #navbar ul li a{
     color: #12334e;
@@ -110,10 +110,9 @@ header{
     color: #fff;
     background: #dabc13;
 }
-
 /* responsive NAVBAR section */
 
-@media (max-width: 908px)
+@media (max-width: 992px)
 {
     #navbar{
         position: fixed;
@@ -124,10 +123,10 @@ header{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100% - 59px);
-        
+        height: calc(100vh - 60px);
     }
     #navbar.active{
+        height: calc(100vh - 60px);
         bottom: 0;
         width: 100%;
     }
@@ -140,91 +139,15 @@ header{
 
 /* NAVBAR finish */
 
-/* registration start */ 
-
-.container-login{
-    position: absolute;
-    top: 55%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-}
-.login-form{
-    height: 420px;
-    width: 330px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    color: #fff;
-    padding-top: 50px;
-}
-.login h3{
-    letter-spacing: 1px;
-
-}
-input{
-    width: 300px;
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    outline: none;
-    padding: 10px;
-    font-size: 13px;
-    border-radius: 15px;
-    box-shadow: 0 0 4px #fff;    
+.card{
+    background: rgba(43, 43, 43, 0.744);
+    margin-top: 25vh;
 }
 .btn{
-    width: 150px;
-    padding: 5px 20px;
-    margin-top: 30px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
-    box-shadow: 0 0 4px #fff;
-    cursor: pointer;
-    color: rgb(226, 220, 215);
+    background: rgba(43, 43, 43, 0.861);
 }
-input[name]:focus {
-    color: rgb(255, 255, 255);
-}
-input:focus,
-.btn:hover {
-    box-shadow: 0 0 10px #b92200;
-}
-
-@media screen and (max-width: 900px)
-{
-    .container-login{
-        left:50%;
-        z-index: -10;
+@media  screen and (max-width: 425px) {
+    .card{
+        margin-top: auto;
     }
 }
-
-@media screen and (max-height: 500px)
-{
-    .container-login{
-        position: inherit;
-        transform: none;
-    }
-    .login-form{
-        margin: 0 auto;
-    }
-}
-@media screen and (max-width: 365px)
-{
-    .container-login{
-        position: inherit;
-        transform: none;
-    }
-    .login-form{
-        width: 100%;
-        margin-left:0;
-        margin-right:0;
-        border-width: 0;
-        box-shadow: none;
-        height: 100vh;
-    }
-}
-
-/* registration finish */
-
