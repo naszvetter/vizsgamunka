@@ -155,7 +155,7 @@ namespace s_port
             }
             else
             {
-                var kijeloltSorId = _aktualisTabla.Rows[dataGridView1.CurrentCell.RowIndex][0];
+                var kijeloltSorId = (dataGridView1.DataSource as DataTable).Rows[dataGridView1.CurrentCell.RowIndex][0];
                 SorTorlese(kijeloltSorId.ToString());
             }
         }
