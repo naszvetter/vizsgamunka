@@ -39,8 +39,8 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="../vizsgamunka/uj_esemeny.php">Új esemény léterhozása</a></li>
-        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
+        <li><a href="./uj_esemeny.php">Új esemény léterhozása</a></li>
+        <li><a href="./HTML/about_us.html">Rólunk</a></li>
         <li><a href="index_login.php">Kijelentkezés</a></li>
       </ul>
     </div>
@@ -68,6 +68,7 @@ include_once 'include/connect.php';
             <select name="sportag" class="radius" > 
             <option>Sportág választása</option>
             <?php
+            // legördülő listából a sportok kiválasztása
             $result3=mysqli_query($connect,"select * from sportok");
             while($row=mysqli_fetch_array($result3))
             {
@@ -86,6 +87,7 @@ include_once 'include/connect.php';
             <select name="esemeny_hely" class="radius" > 
             <option>Település választása</option>
             <?php
+            // legördülő listából a települések kiválasztása
             $result2=mysqli_query($connect,"select * from telepulesek");
             while($row=mysqli_fetch_array($result2))
             {
@@ -130,6 +132,7 @@ include_once 'include/connect.php';
     </div>
         
     <?php
+    // esemenyek táblázatból adatok lekérése
     include_once 'include/connect.php';
     if(isset($_POST['submit'])) 
     {
@@ -152,7 +155,7 @@ include_once 'include/connect.php';
               $telepulesid= $row['telepulesek_telepules_id']; 
               $fromdate= $row['esemeny_ido'];
               $esemenyleiras= $row['esemeny_leiras'];
-
+              // telepules id-ból a település nevének meghatározása
               $query_telepulesid= ("SELECT telepules_nev FROM telepulesek WHERE telepules_id= '$telepulesid' "); 
               $telepid1= mysqli_query($connect, $query_telepulesid) OR die('error');
               if(mysqli_num_rows($telepid1)>0)
