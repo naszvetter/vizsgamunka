@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once 'include/connect.php';
-
+//ellenőrzi, hogy minden adat kitöltésre került-e
   if(isset($_POST['submit']))
     {
         $errors = array();
@@ -26,6 +26,7 @@ include_once 'include/connect.php';
             $true=false;
             array_push($errors, "A jelszó megerősítése üres");
         }
+        //ellenőrzi, hogy a megadott jelszó és a megerősítés egyforma-e
         if(!($_POST['jelszo']==$_POST['jelszo_ujra']))
         {
             $true=false;
@@ -43,6 +44,7 @@ include_once 'include/connect.php';
             $connect-> query($sql);
             session_start();
             $_SESSION['email']=$email;
+            //amennyiben a regisztráció sikeres, a bejelenkezés oldalra lép
             header('location:index_login.php');
         }
     }
@@ -69,7 +71,7 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
+        <li><a href="./HTML/about_us.html">Rólunk</a></li>
         <li><a href="./HTML/AFSZ.html">Adatkezelés</a></li>
       </ul>
     </div>
@@ -101,6 +103,7 @@ include_once 'include/connect.php';
 <!--Registration finish-->
 
     <?php
+    //ha valamilyen adat hiányzik, akkor azt kiírja
     if(!empty($errors))
     {
         foreach($errors as $key)
