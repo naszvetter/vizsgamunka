@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once 'include/connect.php';
-
+// ellenőrzés, hogy van-e email, és jelszó adat megadva
   if(isset($_POST['submit']))
     {
         $errors = array();
@@ -26,6 +26,7 @@ include_once 'include/connect.php';
             
             $sql="SELECT * FROM felhasznalok WHERE email = '$email' AND jelszo='$jelszo'";
             $query = $connect -> query ($sql);
+            // ha van olyan ahol email és a hozzá tartozó jelszó megegyezik engedi a belést
             if (mysqli_num_rows($query) == 1)
               {
                   session_start();
@@ -70,8 +71,8 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
-        <li><a href="../vizsgamunka/HTML/AFSZ.html">Adatkezelés</a></li>
+        <li><a href="./HTML/about_us.html">Rólunk</a></li>
+        <li><a href="./HTML/AFSZ.html">Adatkezelés</a></li>
       </ul>
     </div>
   </header>
