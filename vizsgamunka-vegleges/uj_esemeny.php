@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once 'include/connect.php';
-
+//ellenőrzi, hogy minden szükséges mező kitöltésre került-e
   if(isset($_POST['submit']))
     {
         $errors = array();
@@ -32,6 +32,7 @@ include_once 'include/connect.php';
             $esemenynev=mysqli_real_escape_string($connect, $_POST['esemeny_nev']);
 
             $sportag=mysqli_real_escape_string($connect, $_POST['sportag']);
+            //a sportok táblában meg kell keresni a felhasználó által megadott sportág id-ját
             $query_sportagid= ("SELECT sport_id FROM sportok WHERE sport_nev= '$sportag' "); 
             $sportagid1= mysqli_query($connect, $query_sportagid) OR die('error');
             if(mysqli_num_rows($sportagid1)>0)
@@ -43,6 +44,7 @@ include_once 'include/connect.php';
             }
 
             $esemenyhely=mysqli_real_escape_string($connect, $_POST['esemeny_hely']);
+            //a telepulesek táblában meg kell keresni a felhasználó által megadott telepules id-ját
             $query_telepulesektelepulesid= ("SELECT telepules_id FROM telepulesek WHERE telepules_nev= '$esemenyhely' "); 
             $telepulesektelepulesid1= mysqli_query($connect, $query_telepulesektelepulesid) OR die('error');
             if(mysqli_num_rows($telepulesektelepulesid1)>0)
@@ -56,10 +58,11 @@ include_once 'include/connect.php';
             $esemenyido=mysqli_real_escape_string($connect, $_POST['esemeny_ido']);
             $esemenyleiras=mysqli_real_escape_string($connect, $_POST['esemeny_leiras']);
 
-            $esemenyhely2="";
+            //$esemenyhely2="";
+            //a felhasználó által megadott időpontot az adatbázisban használt formátumra kell átírni
             $fdate= strtotime($esemenyido);
             $fdate= date("Y/m/d", $fdate);
-
+            //új esemeny rögzítése az adatbázisba
             $sql="INSERT INTO esemenyek(esemeny_nev, sport_id,esemeny_ido , esemeny_leiras, telepulesek_telepules_id) VALUES('$esemenynev','$sportagid','$fdate','$esemenyleiras', '$telepulesektelepulesid')";
             $connect-> query($sql);
             //session_start();
@@ -105,9 +108,9 @@ include_once 'include/connect.php';
     <div id="toggle"></div>
     <div id=navbar>
       <ul>
-        <li><a href="../vizsgamunka/esemenyek.php">Események</a></li>
-        <li><a href="../vizsgamunka/HTML/about_us.html">Rólunk</a></li>
-        <li><a href="index_login.php">Kijelentkezés</a></li>
+        <li><a href="./esemenyek.php">Események</a></li>
+        <li><a href="./HTML/about_us.html">Rólunk</a></li>
+        <li><a href="./index_login.php">Kijelentkezés</a></li>
       </ul>
     </div>
   </header>
@@ -141,6 +144,7 @@ include_once 'include/connect.php';
         <select name="sportag" class="radius" > 
         <option>Sportág választása</option>
         <?php
+        //adatbázisból lehet kiválasztani a sportágat 
         $result3=mysqli_query($connect,"SELECT * from sportok");
         while($row=mysqli_fetch_array($result3))
         {
@@ -158,6 +162,7 @@ include_once 'include/connect.php';
         <select name="esemeny_hely" class="radius"> 
           <option>Esemény helye</option>
             <?php
+            //adatbázisból lehet kiválasztani a település helyét
             $result2=mysqli_query($connect,"SELECT * from telepulesek");
             while($row=mysqli_fetch_array($result2))
             {
